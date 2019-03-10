@@ -1,0 +1,1826 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="GENERATOR" content="JustSystems Homepage Builder Version 18.0.9.0 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>答案百花（福祉・看護・介護…作文系）</TITLE>
+<SCRIPT>
+<!--HPB_SCRIPT_INFO_40
+//HPB_VFX_EVT Element:BODY Event:OnLoad Handler:HpbVfxinit('Layer2','HpbVfx0101','D320',1000,1000,1); 
+//HPB_VFX_PAR Element:BODY Event:OnLoad LayerID:Layer2 Entry:HpbVfx0101 Param:D320 1stDelay:1000 NxtDelay:1000 Loop:1 
+//-->
+</SCRIPT><SCRIPT language="JavaScript">
+<!--HPB_SCRIPT_VFX_40
+//
+// Licensed Materials - Property of IBM
+// 83H7290 
+// (C) Copyright IBM Corp. 1995, 1998  All rights reserved.
+//
+var layerId       =  0; var func          =  1; var effectPattern =  2; 
+var startTime     =  3; var nextLayerIdx  =  4; var nextStartTime =  5; 
+var intervalTime  =  6; var repeat        =  7; var endVisibility =  8;
+var posX          =  9; var posY          = 10; var posStartX     = 11;
+var posStartY     = 12; var posEndX       = 13; var posEndY       = 14;
+var stepX         = 15; var stepY         = 16; var frame         = 17;
+var accelerationX = 18; var accelerationY = 19; var angle         = 20;
+var fixedX        = 21; var fixedY        = 22; 
+
+var appVer = parseInt(navigator.appVersion);
+var isNC = (document.layers && (appVer >= 4)); // Netscape Navigator 4.0 or later
+var isIE = (document.all    && (appVer >= 4)); // Internet Explorer  4.0 or later
+var elt;
+elt = new Array;
+var layerobj;
+layerobj = new Array;
+var lastobj;
+
+function HpbVfxinit() {
+  var w_str;
+  if (isNC || isIE) {
+    var n_div = arguments.length / 6;
+    for (var div = 0; div < n_div; div++) {
+      var args = 6 * div;
+      var arg1 = arguments[args];
+      var arg2 = arguments[args+1];
+      var arg3 = arguments[args+2];
+      var arg4 = arguments[args+3];
+      var arg5 = arguments[args+4];
+      var arg6 = arguments[args+5];
+      elt[div] = new Array(arg1,arg2,arg3,arg4,-1,arg5,0,arg6,true,-32767,-32767,-32767,-32767,-32767,-32767,-32767,-32767,40,1.0,1.0,0,-1,-1);
+  } }
+
+  if (isNC) {
+    for (i=0; i < elt.length; i++) {
+      w_str = "document." + elt[i][layerId];
+      layerobj[i] = eval(w_str);
+      if (layerobj[i]) {
+        layerobj[i].init = false;
+        layerobj[i].innerH = window.innerHeight;
+        layerobj[i].innerW = window.innerWidth;
+        layerobj[i].pos_x = layerobj[i].left;
+        layerobj[i].pos_y = layerobj[i].top;
+        layerobj[i].pos_w = layerobj[i].clip.width;
+        layerobj[i].pos_h = layerobj[i].clip.height;
+  } } }
+  if (isIE) {
+    for (i=0; i < elt.length; i++) {
+      w_str = "document.all.item(\"" + elt[i][layerId] + "\")";
+      if (eval(w_str)) {
+        w_str = "document.all.item(\"" + elt[i][layerId] + "\").style";
+        layerobj[i] = eval(w_str);
+        if (layerobj[i]) {
+          layerobj[i].init = false;
+          layerobj[i].innerH = document.body.clientHeight;
+          layerobj[i].innerW = document.body.clientWidth;
+          layerobj[i].pos_x = layerobj[i].pixelLeft;
+          layerobj[i].pos_y = layerobj[i].pixelTop;
+          layerobj[i].pos_w = layerobj[i].pixelWidth;
+          layerobj[i].pos_h = layerobj[i].pixelHeight;
+  } } } }
+
+  if (isNC || isIE) {
+    for (i=0; i < elt.length; i++) {
+      if (layerobj[i]) {
+        if (elt[i][posX] == -32767) elt[i][posX] = layerobj[i].pos_x;
+        if (elt[i][posY] == -32767) elt[i][posY] = layerobj[i].pos_y;
+        if (elt[i][effectPattern].charAt(0) == "A") {
+          if (elt[i][posX] != -32767) elt[i][posEndX] = elt[i][posX];
+          if (elt[i][posY] != -32767) elt[i][posEndY] = elt[i][posY];
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            if (elt[i][posY] != -32767) elt[i][posStartY] = elt[i][posY];
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            if (elt[i][posX] != -32767) elt[i][posStartX] = elt[i][posX];
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "5") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "8") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].innerH;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "B") {
+          if (elt[i][posX] != -32767) elt[i][posStartX] = elt[i][posX];
+          if (elt[i][posY] != -32767) elt[i][posStartY] = elt[i][posY];
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            if (elt[i][posY] != -32767) elt[i][posEndY] = elt[i][posY];
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            if (elt[i][posX] != -32767) elt[i][posEndX] = elt[i][posX];
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "6") {
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "7") {
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].innerH;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "C") {
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posStartX] = layerobj[i].innerW;
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              elt[i][posEndY] = elt[i][posY];
+            }
+          }
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posEndX] = layerobj[i].innerW;
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              elt[i][posEndY] = elt[i][posY];
+            }
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              elt[i][posEndX] = elt[i][posX];
+            }
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+            elt[i][posEndY] = layerobj[i].innerH;
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              elt[i][posEndX] = elt[i][posX];
+            }
+            elt[i][posStartY] = layerobj[i].innerH;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "7") {
+            elt[i][posStartX] = layerobj[i].innerW;
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].innerH;
+          }
+          if (elt[i][effectPattern].charAt(1) == "5") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+            elt[i][posEndX] = layerobj[i].innerW;
+            elt[i][posEndY] = layerobj[i].innerH;
+          }
+          if (elt[i][effectPattern].charAt(1) == "6") {
+            elt[i][posStartX] = layerobj[i].innerW;
+            elt[i][posStartY] = layerobj[i].innerH;
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "8") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].innerH;
+            elt[i][posEndX] = layerobj[i].innerW;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "D") {
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][stepX] = 4;  elt[i][stepY] = 0;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][stepX] = 0;  elt[i][stepY] = 4;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "F") {
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              elt[i][posEndX] = elt[i][posX] + layerobj[i].pos_w;
+            }
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              if (elt[i][effectPattern].charAt(3) == "1") elt[i][posEndY] = elt[i][posY] + 80;
+              if (elt[i][effectPattern].charAt(3) == "2") elt[i][posEndY] = elt[i][posY] + 160;
+              if (elt[i][effectPattern].charAt(3) == "3") elt[i][posEndY] = elt[i][posY] + 320;
+            }
+            elt[i][stepX] = 0;  elt[i][stepY] = 4;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              if (elt[i][effectPattern].charAt(3) == "1") elt[i][posEndX] = elt[i][posX] + 80;
+              if (elt[i][effectPattern].charAt(3) == "2") elt[i][posEndX] = elt[i][posX] + 160;
+              if (elt[i][effectPattern].charAt(3) == "3") elt[i][posEndX] = elt[i][posX] + 320;
+            }
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              elt[i][posEndY] = elt[i][posY] + layerobj[i].pos_h;
+            }
+            elt[i][stepX] = 4;  elt[i][stepY] = 0;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "G") {
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posStartX] = 0;
+            if (elt[i][effectPattern].charAt(3) == "1") elt[i][posStartY] = 80;
+            if (elt[i][effectPattern].charAt(3) == "2") elt[i][posStartY] = 160;
+            if (elt[i][effectPattern].charAt(3) == "3") elt[i][posStartY] = 320;
+            elt[i][posEndX] = 1;  elt[i][posEndY] = 1;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "H") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][stepX] = 8;  elt[i][stepY] = 8;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][stepX] = 16;  elt[i][stepY] = 16;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][stepX] = 32;  elt[i][stepY] = 32;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][stepX] = 0;  elt[i][fixedX] = true;  elt[i][fixedY] = true;
+          }
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][stepY] = 0;  elt[i][fixedX] = true;  elt[i][fixedY] = true;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][fixedX] = false;  elt[i][fixedY] = false;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "I") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][posStartX] = 40;  elt[i][posStartY] = 40;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][posStartX] = 80;  elt[i][posStartY] = 80;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][posStartX] = 160;  elt[i][posStartY] = 160;
+          }
+          elt[i][posEndX] = 1;  elt[i][posEndY] = 1;  elt[i][stepX] = -32767;
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posY] += elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 3 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posY] -= elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 1 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][posX] -= elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 0 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            elt[i][posX] += elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 2 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "5") {
+            elt[i][posY] += elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 3 / 2;
+            elt[i][frame] = -40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "6") {
+            elt[i][posY] -= elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 1 / 2;
+            elt[i][frame] = -40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "7") {
+            elt[i][posX] -= elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 0 / 2;
+            elt[i][frame] = -40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "8") {
+            elt[i][posX] += elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 2 / 2;
+            elt[i][frame] = -40;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "J") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][posStartX] = 0;  elt[i][posStartY] = 80;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][posStartX] = 0;  elt[i][posStartY] = 160;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][posStartX] = 0;  elt[i][posStartY] = 320;
+          }
+          elt[i][posEndX] = 1;  elt[i][posEndY] = 1;
+          elt[i][stepX] = -32767;  elt[i][stepY] = 0;
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][accelerationY] = 0.99;  elt[i][frame] = 40;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "K") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][posStartX] = 40;  elt[i][posStartY] = 40;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][posStartX] = 80;  elt[i][posStartY] = 80;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][posStartX] = 160;  elt[i][posStartY] = 160;
+          }
+          elt[i][stepX] = -32767;  elt[i][stepY] = 0;
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posEndX] = 13;  elt[i][posEndY] = 12;  elt[i][frame] = 160;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posEndX] = 7;  elt[i][posEndY] = 2;  elt[i][frame] = 160;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][posEndX] = 11;  elt[i][posEndY] = 4;  elt[i][frame] = 160;
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            elt[i][posEndX] = 7;  elt[i][posEndY] = 4;  elt[i][frame] = 160;
+        } }
+        if (elt[i][effectPattern].charAt(2) == "1") elt[i][intervalTime] = 200;
+        if (elt[i][effectPattern].charAt(2) == "2") elt[i][intervalTime] = 100;
+        if (elt[i][effectPattern].charAt(2) == "3") elt[i][intervalTime] = 50;
+        if ( elt[i][startTime] >= 0 ) setTimeout( "HpbVfxtimer(" + i + ")", elt[i][startTime] );
+} } } }
+
+function HpbVfxtimer(tid) {
+  if (isNC || isIE) {
+    if (layerobj[tid]) {
+      var func_str;
+      func_str = elt[tid][func] + "( tid, elt[tid], layerobj[tid] )";
+      eval(func_str);
+} } }
+
+function HpbVfxshowobj(obj) {
+  if (obj) {
+    if (isNC) obj.visibility = "show";
+    if (isIE) obj.visibility = "visible";
+    lastobj = obj;
+} }
+
+function HpbVfxhideobj(obj) {
+  if (obj) {
+    if (isNC) obj.visibility = "hide";
+    if (isIE) obj.visibility = "hidden";
+} }
+
+function HpbVfx0001(tid,et,ob) {
+  var x;  var y;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.stepX = et[stepX] * Math.cos(et[angle]);
+      else ob.stepX = (et[posEndX] - et[posStartX]) / et[frame];
+      if (et[stepY] != -32767) ob.stepY = et[stepY] * Math.sin(et[angle]);
+      else ob.stepY = (et[posEndY] - et[posStartY]) / et[frame];
+      if (ob.stepX > 0 && ob.stepX < 1) ob.stepX = 1;
+      if (ob.stepX < 0 && ob.stepX > -1) ob.stepX = -1;
+      if (ob.stepY > 0 && ob.stepY < 1) ob.stepY = 1;
+      if (ob.stepY < 0 && ob.stepY > -1) ob.stepY = -1;
+      if (et[posStartX] != -32767) ob.x = et[posStartX];
+      else if (ob.stepX > 0) ob.x = 0 - ob.pos_w; else ob.x = ob.innerW - ob.pos_w;
+      if (et[posStartY] != -32767) ob.y = et[posStartY];
+      else if (ob.stepY > 0) ob.y = 0 - ob.pos_h; else ob.y = ob.innerH - ob.pos_h;
+      if (et[posEndX] != -32767) ob.posEndX = et[posEndX];
+      else if (ob.stepX > 0) ob.posEndX = ob.innerW - ob.pos_w; else ob.posEndX = 0 - ob.pos_w;
+      if (et[posEndY] != -32767) ob.posEndY = et[posEndY];
+      else if (ob.stepY > 0) ob.posEndY = ob.innerH - ob.pos_h; else ob.posEndY = 0 - ob.pos_h;
+      HpbVfxshowobj(ob);
+      ob.init = true;  ob.frame = 0;
+    }
+    ob.stepX = ob.stepX * et[accelerationX];
+    if (ob.stepX > 0 && ob.stepX < 1) ob.stepX = 1;
+    if (ob.stepX < 0 && ob.stepX > -1) ob.stepX = -1;
+    ob.stepY = ob.stepY * et[accelerationY];
+    if (ob.stepY > 0 && ob.stepY < 1) ob.stepY = 1;
+    if (ob.stepY < 0 && ob.stepY > -1) ob.stepY = -1;
+    ob.x += ob.stepX;  ob.y += ob.stepY;
+    var endX;  var endY;
+    endX = false;  endY = false;
+    if (ob.stepX > 0) if (ob.x >= ob.posEndX) {endX = true;  ob.x = ob.posEndX;}
+    if (ob.stepX < 0) if (ob.x <= ob.posEndX) {endX = true;  ob.x = ob.posEndX;}
+    if (ob.stepX == 0) endX = true;
+    if (ob.stepY > 0) if (ob.y >= ob.posEndY) {endY = true;  ob.y = ob.posEndY;}
+    if (ob.stepY < 0) if (ob.y <= ob.posEndY) {endY = true;  ob.y = ob.posEndY;}
+    if (ob.stepY == 0) endY = true;
+    ob.left = Math.round( ob.x );  ob.top = Math.round(ob.y);
+    if (endX == true && endY == true) {
+      if (et[endVisibility] == false) HpbVfxhideobj(ob);
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+    } else setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} }
+
+function HpbVfx0101(tid,et,ob) {
+  var cl;  var cr;  var ct;  var cb;  var tm;  var x;  var y;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.cs_x = et[stepX]; else ob.cs_x = ob.pos_w / et[frame];
+      if (et[stepY] != -32767) ob.cs_y = et[stepY]; else ob.cs_y = ob.pos_h / et[frame];
+      ob.c_x = 0;  ob.c_y = 0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tm = false;
+    cl = 0;  cr = ob.pos_w;  ct = 0;  cb = ob.pos_h;
+    x = ob.pos_x;  y = ob.pos_y;
+    if (et[fixedX] == false) {
+      if (ob.cs_x > 0) {
+        ob.c_x += ob.cs_x;
+        if (cr > ob.c_x) {
+          cl = cr - ob.c_x;  tm = true;  x = ob.pos_x - ob.pos_w + ob.c_x;
+      } }
+      if (ob.cs_x < 0) {
+        ob.c_x += ob.cs_x;  cr = ob.c_x * -1;
+        if (cr < ob.pos_w) {
+          tm = true;  x = ob.pos_x + ob.pos_w + ob.c_x;
+        } else cr = ob.pos_w;
+      }
+    } else {
+      if (ob.cs_x > 0) {
+        ob.c_x += ob.cs_x;
+        if (cr > ob.c_x) {cr = ob.c_x;  tm = true;}
+      }
+      if (ob.cs_x < 0) {
+        ob.c_x += ob.cs_x;  cl = ob.c_x * -1;
+        if (cl < ob.pos_w) {tm = true;  cl = ob.pos_w - cl;} else cl = 0;
+    } }
+    if (et[fixedY] == false) {
+      if (ob.cs_y > 0) {
+        ob.c_y += ob.cs_y;
+        if (cb > ob.c_y) {ct = cb - ob.c_y;  tm = true;  y = ob.pos_y - ob.pos_h + ob.c_y;}
+      }
+      if (ob.cs_y < 0) {
+        ob.c_y += ob.cs_y;  cb = ob.c_y * -1;
+        if ( cb < ob.pos_h ) {tm = true;  y = ob.pos_y + ob.pos_h + ob.c_y;} else cb = ob.pos_h;
+      }
+    } else {
+      if (ob.cs_y > 0) {
+        ob.c_y += ob.cs_y;
+        if (cb > ob.c_y) {cb = ob.c_y;  tm = true;}
+      }
+      if (ob.cs_y < 0) {
+        ob.c_y += ob.cs_y;  ct = ob.c_y * -1;
+        if (ct < ob.pos_h) {tm = true;  ct = ob.pos_h - ct;} else ct = 0;
+    } }
+    if (isNC) {ob.clip.left = cl;  ob.clip.right = cr;  ob.clip.top = ct;  ob.clip.bottom = cb;}
+    if (isIE) ob.clip = "rect(" + ct + "," + cr + "," + cb + "," + cl + ")";
+    ob.top = y;  ob.left = x;
+    if (tm) setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+    else {
+      if (et[endVisibility] == false) HpbVfxhideobj(ob);
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+} } }
+
+function HpbVfx0201(tid,et,ob) {
+  var cl;  var cr;  var ct;  var cb;  var tm;  var x;  var y;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.cs_x = et[stepX]; else ob.cs_x = ob.pos_w / et[frame];
+      if (et[stepY] != -32767) ob.cs_y = et[stepY]; else ob.cs_y = ob.pos_h / et[frame];
+      ob.c_w = et[posEndX] - et[posStartX];  ob.c_h = et[posEndY] - et[posStartY];
+      ob.c_x = 0;  ob.c_y = 0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tm = false;
+    cl = 0;  cr = ob.pos_w;  ct = 0;  cb = ob.pos_h;
+    x = et[posStartX];  y = et[posStartY];
+    if (ob.cs_x > 0) {
+      ob.c_x += ob.cs_x;
+      if (ob.c_x < (ob.pos_w - ob.c_w)) {
+        cl = ob.c_x;  cr = cl + ob.c_w;
+        tm = true;
+      } else cl = ob.pos_w - ob.c_w;
+    }
+    if (ob.cs_x < 0) {
+      ob.c_x += ob.cs_x;  cr = ob.pos_w + ob.c_x;
+      if (cr > ob.c_w) {cl = cr - ob.c_w;  tm = true;}
+      else cr = ob.c_w;
+    }
+    if (ob.cs_y > 0) {
+      ob.c_y += ob.cs_y;
+      if (ob.c_y < (ob.pos_h - ob.c_h)) {
+        ct = ob.c_y;  cb = ct + ob.c_h;
+        tm = true;
+      } else ct = ob.pos_h - ob.c_h;
+    }
+    if (ob.cs_y < 0) {
+      ob.c_y += ob.cs_y;  cb = ob.pos_h + ob.c_y;
+      if (cb > ob.c_h) {ct = cb - ob.c_h;  tm = true;}
+      else cb = ob.c_h;
+    }
+    if (isNC) {ob.clip.left = cl;  ob.clip.right = cr;  ob.clip.top = ct;  ob.clip.bottom = cb;}
+    if (isIE) ob.clip = "rect(" + ct + "," + cr + "," + cb + "," + cl + ")";
+    x -= cl;  y -= ct;
+    ob.top = y;  ob.left = x;
+    if (tm) setTimeout( "HpbVfxtimer(" + tid + ")",et[intervalTime]);
+    else {
+      if (et[endVisibility] == false) HpbVfxhideobj(ob);
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+} } }
+
+function HpbVfx0301(tid,et,ob) {
+  var x;  var y;  var tx;  var ty;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.step = et[stepX]; else ob.step = (Math.PI * 2) / et[frame];
+      ob.boundX = et[posStartX];  ob.boundY = et[posStartY];
+      ob.angle = 0.0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tx = Math.cos(ob.angle * et[posEndX]) * ob.boundX;  ty = Math.sin(ob.angle * et[posEndY]) * ob.boundY;
+    if (et[fixedX] != 0) tx = Math.abs(tx) * et[fixedX];
+    if (et[fixedY] != 0) ty = Math.abs(ty) * et[fixedY];
+    x = et[posX];  y = et[posY];
+    x += tx * Math.cos(et[angle]);  y += tx * Math.sin(et[angle]);
+    x += ty * Math.cos(et[angle] + (Math.PI / 2));  y += ty * Math.sin(et[angle] + (Math.PI / 2));
+    ob.top = Math.round(y);  ob.left = Math.round(x);
+    if (et[accelerationX] != 1.0 || et[accelerationY] != 1.0) {
+      ob.boundX *= et[accelerationX];  ob.boundY *= et[accelerationY];
+      if (ob.boundX < 4  && ob.boundY < 4) {
+        ob.init = false;
+        if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+        else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+      } else {
+        ob.angle += ob.step;
+        setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+      }
+    } else {
+      if (ob.angle >= (2 * Math.PI)) {
+        ob.init = false;
+        if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+        else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+      } else {
+        ob.angle += ob.step;
+        setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} } } }
+
+function HpbVfx0311(tid,et,ob) {
+  var x;  var y;  var ws;
+  if (ob) {
+    if (ob.init == false) {ob.setp = 0;  HpbVfxshowobj(ob);  ob.init = true;}
+    x = et[posX];  y = et[posY];
+    if (et[fixedX] == true) ws = ob.setp;
+    else {
+      ws = Math.round(Math.random() * 4);
+      if (ws > 3) ws = 0;
+    }
+    if (ws == 1) x += et[stepX];
+    if (ws == 3) x -= et[stepX];
+    if (et[fixedY] == true) ws = ob.setp;
+    else {
+      ws = Math.round(Math.random() * 4);
+      if (ws > 3) ws = 0;
+    }
+    if (ws == 1) y += et[stepY];
+    if (ws == 3) y -= et[stepY];
+    ob.top = Math.round( y );  ob.left = Math.round( x );
+    ob.setp ++;
+    if (ob.setp >= 4) {
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+    } else setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} }
+
+function HpbVfx0401(tid,et,ob) {
+  var x;  var y;  var tx;  var ty;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.step = et[stepX]; else ob.step = (Math.PI * 2) / et[frame];
+      ob.angle = 0.0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tx = Math.cos((ob.angle * et[posEndX]) + et[stepY]) * et[posStartX];
+    ty = Math.sin((ob.angle * et[posEndY]) + et[stepY]) * et[posStartY];
+    x = et[posX];  y = et[posY];
+    x += tx * Math.cos(et[angle]);  y += tx * Math.sin(et[angle]);
+    x += ty * Math.cos(et[angle] + (Math.PI / 2));  y += ty * Math.sin(et[angle] + (Math.PI / 2));
+    ob.top = Math.round(y);  ob.left = Math.round(x);
+    if (Math.abs(ob.angle) >= (2 * Math.PI)) {
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+    } else {
+      ob.angle += ob.step;
+      setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} } }
+
+function HpbVfx0501(tid,et,ob) {
+  if (ob) {
+    if (ob.init == false) {HpbVfxshowobj(ob);  ob.init = true;}
+    var px;  var py;
+    if (isNC) {px = window.pageXOffset;  py = window.pageYOffset;}
+    if (isIE) {px = document.body.scrollLeft;  py = document.body.scrollTop;}
+    ob.top = Math.round(py + et[posY]);  ob.left = Math.round(px + et[posX]);
+    setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} }
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffcc" text="#000000" onload="HpbVfxinit('Layer2','HpbVfx0101','D320',1000,1000,1);">
+<P align="center"><A name="up"></A><IMG src="014roses.JPG" width="600" height="95" border="0" alt="バラ" align="middle"></P>
+<CENTER>
+<TABLE border="1" width="600" cellpadding="15">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="272"><FONT color="#0000ff" size="+3">答</FONT><FONT color="#ff0000" size="+3">案</FONT><FONT color="#0000ff" size="+3">百</FONT><FONT color="#ff0000" size="+3">花</FONT><BR>
+      <BR>
+      <FONT color="#0000ff">光る文章講座</FONT><BR>
+      <BR>
+      <FONT size="+2" color="#ff0000">福祉</FONT><FONT size="+2">・</FONT><FONT size="+2" color="#0000ff">看護</FONT><FONT size="+2">・</FONT><FONT size="+2" color="#ff0000">保育</FONT><FONT size="+2">の</FONT><FONT size="+2" color="#990099">作文</FONT><BR>
+      <BR>
+      <FONT size="-1">――　</FONT><FONT color="#0000ff">高校生・社会人（作文系）</FONT><FONT size="-1">　――</FONT></TD>
+      <TD valign="middle" align="left" colspan="2" width="256">①　<A href="#kango-watashi">「看護と私」</A><BR>
+      ②　<A href="#yume">「看護師としての私の夢」</A><BR>
+      ③　<A href="#kakukazoku">「核家族時代の保育士の役割」</A><BR>
+      ④　<A href="#rusukatei">「留守家庭児童会」</A><BR>
+      ⑤　<A href="#tokugi">「私の特技」</A><BR>
+      ⑥　<A href="#rihabiri">「リハビリと私」</A><BR>
+      ⑦　<A href="#shinkyu">「鍼灸師としての私の夢」</A><BR>
+      ⑧　<A href="#host">「ホスピタリティー」</A><BR>
+      ⑨　<A href="#jikosuisen">「自己推薦書」</A><BR>
+      　　　…………　…………　…………<BR>
+      ⑩　<A href="#gyakutai">「虐待」</A><BR>
+      　　　１．<A href="#gyakutai">「児童虐待」</A><BR>
+      　　　２．<A href="#kohreisha">「高齢者虐待」</A><BR>
+      　　　３．<A href="#shogaisha">「障害者虐待」</A><BR>
+      ⑪　<A href="#hinkon">「貧困問題」</A><BR>
+      ⑫</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">　<A href="newpage28.htm">公務員試験の作文（講座案内）</A>　　<BR>
+　<A href="newpage26.htm">答案百花　総合案内</A>　→　<A href="newpage50.htm">「公務員試験の作文」（答案百花）</A>　→<A href="newpage109.html">「時事用語」</A><BR>
+<BR>
+<A href="newpage113.html">作文打出の小づち<BR>
+</A><A href="newpage113.html">
+            総もくじ</A><BR>
+            <A href="newpage114.html">作文編</A>　　<A href="newpage115.html">国語編　</A>　<A href="newpage116.html">小論文編</A>　　<A href="newpage117.html">閑 話</A><BR>
+<BR>
+<A href="newpage11.htm">入社試験の論作文</A>　　<A href="index.htm">トップページへ</A></P>
+<HR>
+<P align="center"><A name="kango-watashi"></A><BR>
+<FONT color="#ff0000">①</FONT>　<FONT color="#0000ff">「看護と私」</FONT><BR>
+<BR>
+<BR>
+就職試験の答案練習では、「○○と私」という題で、<BR>
+「○○」に希望の業種名、製品名などを入れて書くことを必修にしているが、<BR>
+専門学校等に進む場合もこの題で書いてもらっている。<BR>
+その場合、体験や実績、抱負はもとより、もてるものを総動員しなければならない。<BR>
+結果として、パーソナリティーが現れ、面接にも役立つからである。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　昨年の冬、保育園から会社に電話がありました。<BR>
+      「由紀ちゃんが39度も熱があるから、すぐに迎えに来てください」<BR>
+      という用件でした。「すぐに」と言われても、会社から保育園まで1時間以上もかかります。電車の中で何度娘に対して謝ったか分かりません。<BR>
+      　いったん家に帰り、りんごジュースを持って、車で迎えに行きました。先生に抱かれ脱力状態の娘が私の顔を見ると、すごい勢いで泣き出しました。泣き続ける娘をチャイルドシートに乗せ、病院に向かいました。赤信号がとても長く感じられました。病院に着いて、しばらくして診察してもらえました。肺炎の可能性もあるからと、レントゲンを撮り、点滴を受けました。幸い、入院はしないですみましたが、４，5日は毎日点滴を受けに通院しました。点滴をした時だけ熱が下がり、高熱が続きました。<BR>
+      　点滴を受ける最後の日、私の顔に心配と疲れが出ていたようで、毎日点滴をしてくれていた看護師さんが、<BR>
+      「よくなってきているから、大丈夫よ」<BR>
+      と言ってくれました。その言葉を聞いて、緊張感がなくなり、気持ちがとても楽になりました。安心できました。<BR>
+      　それまで「看護師さん」と聞くと、病気の人やけがをした人の体の看護をするだけだと思っていましたが、その人の家族の心も看護することに気付きました。とてもやりがいのある素適な仕事に思えました。<BR>
+      　私もいつか病気で苦しんでいる患者さんと患者さんを支えている家族の力になりたいと思います。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約６００字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff">※　娘さんの年齢を入れる。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　娘の病気の軽いことを祈ったかしれません。<BR>
+      <BR>
+      ←　娘は先生に抱かれてぐったりしていましたが、私の顔を見ると<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　緊張がほぐれ<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　「とてもやりがいのある……」で改行して、頭に「私が救われたことで」を補い、かつ、次の段落とひとまとめにする。<BR>
+      ←　私も看護師になって、患者さんとその家族の方々の力になりたいと思います。（「講評」参照。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12">
+  <CAPTION><B><U>講　　評</U></B></CAPTION>
+  <TBODY>
+    <TR>
+      <TD width="300" height="48" valign="top" align="left" bgcolor="#ffffff">一、内容と構成<BR>
+      <BR>
+      　娘さんの発熱を通して、病状とそれに伴う心労が具体的に分かりやすくつづられている。事実経過の後に感想の類が添えられているのも好感がもてる。<BR>
+      　ただし、看護師になろうとする動機ないし決意に物足りなさがある。この点を一工夫してみたい。<BR>
+      　終わりから２段落目の最後の文、「とてもやりがいがいのある素適な仕事に思えました」がカギとなる。<BR>
+      <BR>
+      　①この出来事がきっかけとなって看護師になろうと思った場合と、②以前からその気持ちがあった場合とに分けて考えてみよう。いずれの場合も、「とても……」で改行して、頭に少し補い、次の段落と合わせる。<BR>
+      　①の場合；<BR>
+      　「娘の発熱という事件を通して、看護師というのはとてもやりがいのある仕事だと思い、看護師を志しました。私もいつか……」<BR>
+      　②の場合；<BR>
+      　「前々から看護師になりたいという気持ちはありましたが、この出来事によって、看護師というのはとても……。……｝<BR>
+      <BR>
+      二、表記と表現<BR>
+      <BR>
+      　減点になるほどの間違いはない。<BR>
+      <BR>
+      三、評点<BR>
+      <BR>
+      　　　<U>ランクＢ</U>，<U>得点７５</U></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="289">書き直した答案</TD>
+      <TD valign="middle" align="center" width="251">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="289" bgcolor="#ffffff">　　娘が１歳の冬、保育園から会社に電話がありました。<BR>
+      「由紀ちゃんが39度も熱があるから、すぐに迎えに来てください」<BR>
+      という用件でした。「すぐに」と言われても、会社から保育園まで1時間以上もかかります。電車の中で娘の病気の軽いことを何度祈ったか分かりません。<BR>
+      　いったん家に帰り、りんごジュースを持って、車で迎えに行きました。娘は先生に抱かれてぐったりしていましたが、私の顔を見るとすごい勢いで泣き出しました。泣き続ける娘をチャイルドシートに乗せ、病院に向かいました。赤信号がとても長く感じられました。病院に着いて、しばらくして診察してもらえました。肺炎の可能性もあるからと、レントゲンを撮り、点滴を受けました。幸い、入院はしないですみましたが、４，5日は毎日点滴を受けに通院しました。高熱が続き、点滴をした時だけ熱が下がるという状態でした。<BR>
+      　点滴を受ける最後の日、私の顔に心配と睡眠不足による疲れが出ていたようで、受け持ちの看護師さんが、<BR>
+      「よくなってきているから、大丈夫よ」<BR>
+      と言ってくれました。その言葉を聞いて、緊張感がほぐれ、気持ちがとても楽になりました。<BR>
+      それまで「看護師さん」と聞くと、病気の人やけがをした人の体の看護をするだけだと思っていましたが、その人の家族の心も看護することに気付きました。<BR>
+      　前々から、看護師になりたいという気持ちが漠然とながらありましたが、この出来事によって、看護師の仕事はとてもやりがいのあるものに思え、看護師になろうと決心しました。私もいつか患者さんとその家族の力になりたいと思います。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約６００字）</TD>
+      <TD valign="top" align="left" width="251" bgcolor="#ffffff"><BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="yume"></A><BR>
+<FONT color="#ff0000">②</FONT>　<FONT color="#0000ff">「看護師としての私の夢」</FONT><BR>
+<BR>
+<BR>
+ぞっとする出来事から。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　私の母は私が生まれる前、看護婦をしていた。私が2歳の頃、自転車の車輪に人差し指が入ってしまい、指が切れてしまったことがあった。切り口は深く、第一関節から指がぶらぶらしていて、すごい出血だったそうだ。母はすぐに止血の処置をし、私を病院に連れて行った。病院では、切り口が深かったこともあってか、「化膿したら指を切断します」と言われた。母は、指を切断することになってはと思い、毎日消毒の処置をしてくれた。結局、指は化膿することなく、指を切断することもなかった。私は今、ちゃんと指があることを母にとても感謝している。また、切ったときの迅速な処置、冷静さは看護婦の経験があったからではないかと思う。私はそんな母がいてくれてとても心強く、安心した日々を送ってこれた。<BR>
+      　私は９歳の頃、そけいヘルニアでの手術で大学病院に入院したことがある。私は人見知りの激しい子だったので、入院している他の子たちに圧倒される思いだった。私は不安と極度の緊張に陥った。それは、ご飯がのどを通らないほどのものだった。全くご飯が食べられない私を見て、看護師さんが「これなら食べられる？」と、おせんべいをくれた。そのやさしさがうれしくて、おせんべいを全部食べた。その記憶が今でも残っている。<BR>
+      　しかし、緊張が解けることはなかった。看護師さんは忙しそうにしているし、私だけをかまっているわけにはいかない。でも、長いこと入院している子たちはそんなことにはお構いなしに看護師さんに話しかけて相手をしてもらっている。私なんてトイレに行きたいことさえ言えないのに、という感じだった。そんな思いに気付いてくれる看護師さんはさすがにいなかった。とても不安な気持ちでトイレに行った。そのときには既にホームシックで、泣き出してしまいそうだった。<BR>
+      　私は現在一児の母である。私には母がいてくれて心強いと思っていたように、私も自分の子どもにそう思ってもらえるようになりたい。また、私が入院して淋しい思いをしたときに、やさしくしてくれた看護師がいたように、私もそんなやさしい看護師でありたい。心のケアも大事にし、患者さんに慕われる看護師になりたいと思っている。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約1,000字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　事実経過の書き方がよい。3つ目の文末が「……そうだ」となっているので、あとは一々「そうだ」をつけなくてもよい。　<BR>
+      　これに合わせれば、6つ目の文末は「……処置をした」とするのがよい。<BR>
+      ←　指を切断しないで済んだ。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……こられたのだと思う。<BR>
+      ※　段落の頭に「また、」を補う。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　食べられない様子を見て、<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　｛「しかし」以下を前の段落につなぐ。その際、「その記憶が……」の文を削除する。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　「淋しい思い」を末尾の文に回す。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">今は「看護師」と言うが、一昔前は「看護婦」と言った。<BR>
+この使い分けは、この作文のとおりでよいだろう。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="289">書き直した答案</TD>
+      <TD valign="middle" align="center" width="251">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="289" bgcolor="#ffffff">　　私の母は私が生まれる前、看護婦をしていた。私が2歳の頃、自転車の車輪に人差し指が入ってしまい、指が切れてしまったことがあった。切り口は深く、第一関節から指がぶらぶらしていて、すごい出血だったそうだ。母はすぐに止血の処置をし、私を病院に連れて行った。切り口が深かったこともあってか、病院では「化膿したら指を切断します」と言われた。母は、指を切断することになってはと思い、毎日消毒の処置をした。結局、指は化膿することなく、指を切断しないで済んだ。私は今、ちゃんと指があることを母にとても感謝している。また、切ったときの迅速な処置、冷静さは看護婦の経験があったからではないかと思う。私はそんな母がいてくれたので、すっかり安心して日々を送ってこられたのだと思う。<BR>
+      　また、私は９歳の頃、そけいヘルニアでの手術で大学病院に入院したことがある。私は人見知りの激しい子だったので、入院している他の子たちに圧倒される思いだった。私は不安と極度の緊張に陥った。それは、ご飯がのどを通らないほどのものだった。全くご飯が食べられない様子を見て、看護師さんが「これなら食べられる？」と、おせんべいをくれた。そのやさしさがうれしくて、おせんべいを全部食べた。しかし、緊張が解けることはなかった。看護師さんは忙しそうで、私だけをかまっているわけにはいかないだろう。でも、長いこと入院している子たちはそんなことにはお構いなしに看護師さんに話しかけて相手をしてもらっている。私なんてトイレに行きたいことさえ言えないのに、と思った。そんな思いに気付いてくれる看護師さんはさすがにいなかった。とても不安な気持ちでトイレに行った。そのときには既にホームシックで、泣き出してしまいそうだった。<BR>
+      　私は現在一児の母である。私には母がいてくれて心強いと思っていたように、私も自分の子どもにそう思ってもらえるようになりたい。また、私が入院したときに、やさしくしてくれた看護師さんがいたように、私もそんなやさしい看護師でありたい。心のケアも大事にし、淋しい思いをしている患者さんに慕われる看護師になりたいと思っている。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約1,000字）</TD>
+      <TD valign="top" align="left" width="251" bgcolor="#ffffff"><BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+これだけの内容があれば、<BR>
+「理想の看護師像」や「看護と私」、などの課題にも<BR>
+そのまま対処できよう。<BR>
+<BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT><BR>
+</CENTER>
+<HR>
+<P align="center"><A name="kakukazoku"></A><BR>
+<FONT color="#ff0000">③</FONT>　<FONT color="#0000ff">「核家族時代の保育士の役割」</FONT><BR>
+<BR>
+<BR>
+この答案の筆者は公立保育園の職員を目差している。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　私の母は地方から上京して、私を出産し、子育てをしていたので、実家が遠く、身近に子育ての悩みを相談できる人や助けてくれる人がいなかったという。そんな状況の中で、私がアトピー性皮膚炎を発症し、週の半分は病院に通う生活となった。私の症状は重く、手足は包帯で巻いている状態だった。病院に通っても治らず、家庭療法もいろいろと試したが、一向に治らなかった。私が４歳のとき、弟が生まれたが、弟も生後直後にアトピー性皮膚炎を発症した。私と弟は体中が痒くて、夜眠れないことが多かった。母は私達の体に薬を縫ってくれたり、冷やしてくれて、ほとんど眠れない日が続いたという。<BR>
+      　母は子育てに疲れて助けを求めていたとき、地域の公民館へ保育士による育児相談に行った。そのときの保育士が親身に母の話を聞いてくれて母は助けられたという。<BR>
+      　私は保育士になる前からこの話を聞かされていたので、母を救ってくれた保育士のように、私も悩みや助けを求める子育て中の母親の助けになりたいと思った。<BR>
+      　子育て中の母親の相談や手助けをすることや、子育てサークルの場を設け、友だち作りの援助をする役割が保育士にはある。保育士自身が向上していくことで、よりよい援助につながり、核家族時代における保育士の役割が達成できるのだと思う。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約６00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff">←　……上京していたため、実家が遠く、私を出産したときは、……<BR>
+      ←　助けてくれる人がいなかった。<BR>
+      ※　「そんな状況の……」で改行。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　弟も生まれてすぐに<BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　この文末の「……という」はこのまま残す。<BR>
+      <BR>
+      ←　公民館で保育氏による育児相談があることを知って、<BR>
+      <BR>
+      ※　「私は保育士に……」を前の段落につなぐ。<BR>
+      ←　助けを求める母親の<BR>
+      <BR>
+      ←　母親の相談に乗ったり、手助けをしたりすることや<BR>
+      ※　末尾の段落に最初の文を「私は、保育士には……役割があると思う」という形にする。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<TABLE>
+  <CAPTION></CAPTION>
+</TABLE>
+<CENTER><BR>
+<TABLE cellpadding="12" border="1">
+  <CAPTION><B><U>講　　評</U></B></CAPTION>
+  <TBODY>
+    <TR>
+      <TD width="300" height="48" valign="top" align="left" bgcolor="#ffffff">一、内容と構成<BR>
+      <BR>
+      　お母さんの切実な体験がもとになっているので、話の展開には説得力がある。<BR>
+      　段落を、意味のまとまりごとに構成したい。添削例参照。<BR>
+      　なお、今は核家族に時代で、孤立しがちな母親が多いことを考慮して、それに対処する方策を示して話を結ぶようにしたい。<BR>
+      <BR>
+      二、表記と表現<BR>
+      <BR>
+      　お母さんから聞いた話として、「……という」はおしまいの文に付け加えるだけでよい。<BR>
+      　並列の表記「たり」の使い方（始めの段落の終わりの文、終わりの段落のはじめの文）に注意。添削例参照。<BR>
+      <BR>
+      三、評点<BR>
+      <BR>
+      　　　<U>ランクＢ</U>，<U>得点80<BR>
+      </U></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="289">書き直した答案</TD>
+      <TD valign="middle" align="center" width="251">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="289" bgcolor="#ffffff">　私の母は地方から上京して、実家から遠かったため、私を出産したときは、身近に子育ての悩みを相談できる人や助けてくれる人がいなかった。<BR>
+      　そんな状況の中で、私がアトピー性皮膚炎を発症し、週の半分は病院に通う生活となった。私の症状は重く、手足は包帯で巻いている状態だった。病院に通っても治らず、家庭療法もいろいろと試したが、一向に治らなかった。私が４歳のとき、弟が生まれたが、弟も生まれてすぐにアトピー性皮膚炎を発症した。私と弟は体中が痒くて、夜眠れないことが多かった。母は私達の体に薬を縫ってくれたり、冷やしてくれたりするのにほとんどつききりで、眠れない日が続いたという。<BR>
+      　母は子育てに疲れて助けを求めていたとき、地域の公民館へ保育士による育児相談に行った。そのときの保育士が親身に母の話を聞いてくれて、母は助かったという。私は保育士になる前からこの話を聞かされていたので、母を救ってくれた保育士のように、私も親身になって母親の手助けをしたいと思った。<BR>
+      　今は核家族に時代で、孤立しがちな母親が多い。私は、保育士には子育て中の母親の相談に乗ったり手助けをしたりする役割があると思う。さらに、子育てサークルの場を設け、友だち作りの仲介をするのも保育士の役割ではないかと思う。私は、私自身が向上していくことによって、保育士の役割を果たしていきたいと思う。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約６00字）</TD>
+      <TD valign="top" align="left" width="251" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　※「そんな境遇」がよいか。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　母は私達の介護に疲れ果てて、助けがほしいと思っていたとき、近所の公民館で育児相談があると聞いて駆けつけた。その時の……母はそれだけでも助かる思いがしたという。<BR>
+      <BR>
+      <BR>
+      <BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+この答案の筆者には「保育士としての心構え」についての答案もある。<BR>
+子ども相手の現場を忘れているわけではないので、添付しておこう。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <CAPTION></CAPTION>
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="300" bgcolor="#ffffff">　保育士になった当初、私は足に障害のある女の子を担当したことがあった。彼女は歩行器を使って歩いていたが、不安定で転びやすかったので、私はその度に駆け寄って彼女の体を起こしていた。<BR>
+      　彼女が５歳の誕生日を迎えた日、園庭で遊んでいて転んでしまった。私はいつものように駆け寄って、起こそうとしたとき、彼女から思いも寄らない言葉が返ってきた。「５歳になったから、ひとりで起きる。先生、見てて！」。私は彼女に言われたように、ひとりで起き上がるのを見守った。地面に手をつき、歯を食いしばって力強く起き上がった。彼女はとても誇らしげな表情をしていた。その時、手助けするだけでなく、見守ることも大切だということを、私は彼女に教えてもらった。<BR>
+      　それ以来、私は障害をもつ子に対してばかりでなく、障害をもたない子に対しても、見守りながら、必要なときに手助けをすることを心がけている。<BR>
+      　私は子どもとともに喜び合える保育士になりたいと思っている。これからも保育を通じて子どもに教えられることがあるだろう。それも糧に子どもといっしょに日々成長していき、よりよい保育をしていきたいと思う。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約６00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　私は思わず拍手した。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+これだけの経験と考えがあれば、どの職場に行っても歓迎されるだろう。<BR>
+</P>
+<P align="center"><FONT size="+1"><A href="#up">もどる</A></FONT><BR>
+</P>
+<HR>
+<P align="center"><A name="rusukatei"></A><BR>
+<FONT color="#ff0000">④</FONT>　<FONT color="#0000ff">「留守家庭児童会」</FONT><BR>
+<BR>
+もう一つ、公立の保育園を目差す人の答案を紹介しよう。<BR>
+<BR>
+正式な課題名は「留守家庭児童会での指導について思うこと」となっている。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="300" bgcolor="#ffffff">　子ども達に対してどのように指導していけばいいのだろうかと考えると、悩むことが多い。指導の仕方一つで子どもの成長にいくらかでも影響を与えると思うと、責任を感じるからだ。また、昔はよしとされていたことが、今はいけなくなっているのも理由の一つだ。いたずらをしたらお尻ぐらいは叩いてもよかったのだが、今は体罰になる。中にはそれを知っていて注意をしても聞かない子もいる。保護者も昔と違い、小さなことでもすぐ苦情を言う人が増えた。世の中の変化、保護者の考え方の変化を取り入れながら、よりよい指導の仕方をいくつか考えてみようと思う。<BR>
+      　一つ目は、指導者として危険なことや物事の善し悪しを教えるために毅然とした態度で臨むことである。遊びを通して社会性を身に付けていくための助言も必要だ。その際、なぜそうなるのかを分かりやすい言葉でゆっくり話し納得させるようにする。<BR>
+      　二つ目は、親の気持ちになって指導することである。愛情を持って接し、子どもが安心して心を開ける雰囲気作りをする。その日の出来事や気持ちなど、何でも話せる相手になって、信頼関係を築いていく必要がある。また、体調や様子の変化をよく観察し、適切な対応や声かけも大切だ。<BR>
+      　三つ目は、いっしょに遊ぶ時間を持つことである。大人の自分達の所まで降りてきてくれたことに喜びと親近感を覚えれば、良い関係を築いていける。ただ、あくまでも子ども同士がうまく遊べるように見守ることに重点を置き、子どもが自主的に遊びを見つけていけるようにする必要がある。<BR>
+      　これら三つの指導法をうまく使い分けていけば、子ども達は安定した気持ちで過ごせるだろう。一人ひとりの成長を願いながら、優しく、時には厳しく、そして、気持ちが伝わるように指導することが、私の一番の目標だ。<BR>
+      <BR>
+      　　　　　　　　　　　　　　（以上、約８00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ◎　現状の問題点を踏まえているので、以下の考えの背後には強い意思が感じられる。<BR>
+      <BR>
+      ◎　３点が段落分けされているので、指導法が分かりやすい。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ◎　最後に自分の意志が示されているのも心強い。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">この答案の筆者はそれまで<BR>
+「子どもに対する接し方」「思い出に残る出来事」「私について」等、<BR>
+いろいろな課題で練習をしてきた。<BR>
+この答案はその集大成である。内容、構成、表現とも完璧といってよい。<BR>
+<BR>
+この筆者には「私の特技」という答案もある。<BR>
+ユニークなので、次項で紹介しよう。<BR>
+</P>
+<P align="center"><FONT size="+1"><A href="#up">もどる</A></FONT><BR>
+</P>
+<HR>
+<P align="center"><A name="tokugi"></A><BR>
+<FONT color="#ff0000">⑤</FONT>　<FONT color="#0000ff">「私の特技」</FONT><BR>
+<BR>
+<BR>
+念のため、これは前項と同じ筆者の答案である。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="300" bgcolor="#ffffff">　私の特技は物を作ることだ。小さい頃から、身近にある材料を使って何かを作って遊んでいた。母がよく縫い物や編み物をしていたので、余りの毛糸や布をもらって人形を作ったり、木の実や枝を拾ってきて、何ができるだろうと考えたりするのが好きだった。アイディアが浮かぶと夢中になって、時間を忘れて取り組んでいた。大人になってからは、木工やパッチワーク、布花作りなどをしていたが、友人に頼まれてサイドテーブルを作ったり、自分のテーブルクロスを作って楽しんだりしていた。<BR>
+      　ある時、仕事仲間で、地域の子どもたちに見せるために人形劇の人形や大型紙芝居を製作することになり、今まで身につけたことを生かす機会が訪れた。小学校の体育館や運動場の野外ステージで上演するので、かなり大がかりなものになった。私は人形作りを任され、数年にわたって昔話など５作品の人形を作った。一つ一つの作品に思い出があるが、最も印象深かったのは「十二支のはなし」だ。動物たちの素材や配色をどうするか、動かしやすくするには人形の構造をどうするかなど、試行錯誤を繰り返しながら１２体と猫を作った。それまでに培ってきたことがけっこう役に立ち、仲間に喜んでもらうことができた。大道具、小道具の製作、背景や暗幕、黒子の被り物の製作にも積極的に関われたことも大きな喜びだった。苦労も多かったが、完成したときの充実感が何より大きかった。人形劇を見た母が、こんな物が作れるとは思わなかったと喜んでくれたことが思い出される。<BR>
+      　趣味としてやってきたことが人の役に立ち、特技と認められたことが自信にもつながり、気持ちに張りも出てきた。これからも楽しみながら腕を磨いて、周りの人たちの役に立てていきたいと思う。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約７00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ◎　催し物の規模が紹介されているので、人形作りの位置づけと意義がよく分かる。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">得意なことを書いているせいか、話の運びがスムーズで、説得力がある。<BR>
+こんな特技の持ち主なら、保育園はもとより、どこに行っても引く手あまただろう。<BR>
+</P>
+<P align="center"><BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="rihabiri"></A><BR>
+<FONT color="#ff0000">⑥</FONT>　<FONT color="#0000ff">「リハビリと私」</FONT><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　私がリハビリテーション業務に就きたいと思ったのは、自分の行ったことに対して直接反応が得られる生身の人間を相手に仕事をしたいと思ったからである。自分の仕事によって対象者が喜び、感謝されることも多いリハビリテーション業務は素晴らしい仕事であると考えた。<BR>
+      　現在、民間病院でのリハビリテーション業務に就いて１０年になる。知識、技術ともにまだまだ不十分であり、自己研鑽に努めながら、目の前の患者さんに最良の医療サービスを提供できる様に日々の業務を行っている。だが、現場で求められるのは、より多くの患者さんをより効率的にこなしていくことであった。Ｙさんという患者さんを担当させて頂いたことがあった。症状が進行し、自然増悪していくことの多い神経難病の患者さんであった。ご本人もご家族もリハビリを楽しみにされていた。しかし、Ｙさんのリハビリを早期に打ち切るように上司から指導されることになった。その理由は「症状は進行していくので、リハビリを行っても意味がない」からであった。<BR>
+      　国民健康保険制度が危機的状況にあり、医療費を削減し、在院日数を減少させるためには、効率性というのはある程度必要だと考えられる。しかし、リハビリを含めた医療サービスの対象者は、心身を病んだ生身の人間である。最良の医療サービスは患者さんのＱＯＬ（生活の質）を向上させることであるとするならば、患者さんの利益が最優先されるべきである。病院の利益や効率性が最優先されるならば、それは本末転倒である。<BR>
+      　病院、診療所の倒産が全国で発生している現状では、病院、特に民間病院は生き残りの手段を講じていかなくてはならない。民間病院の医療サービスに限界を感じ、国立病院での医療に従事したいと考えたのは、それが理由である。これからも一人ひとりの患者さんに向かい合い、最良の医療サービスを提供していきたいと考えている。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約８00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      ←　直接反応が得られる仕事をしたいと……<BR>
+      ←　……からである。その点、リハビリの仕事は、直に感謝されることも多い。<BR>
+      <BR>
+      <BR>
+      ←　……１０年になる。理学療法士として、知識、技術ともに<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　Ｙさんという患者さんを担当したことがあった。Ｙさんは神経難病で、症状が悪化の一途をたどっていた。<BR>
+      <BR>
+      ←　しかし、上司からＹさんのリハビリを打ち切るよう指示された。<BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……危機的状況にあるため、<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　患者さんの生活の質を向上させることで……<BR>
+      <BR>
+      <BR>
+      ←　病院の倒産や診療所の閉鎖が<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……と考えたのは、患者さんに満足のいく治療をしたいというのが理由である。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12">
+  <CAPTION><U><FONT size="+2">講　　評</FONT></U></CAPTION>
+  <TBODY>
+    <TR>
+      <TD width="322" height="189" valign="top" align="left" bgcolor="#ffffff">一、　内容と構成<BR>
+      <BR>
+      　ヒューマニズムが結論部でエゴイズムに転じたというところか。しかし、これは自己の人生の問題であるから、何ら非難さるべきことではない。<BR>
+      　話はかなりよくまとまっている。ただし、内容が課題に合っていない。この答案は　「この病院を希望する理由」というふうな課題用にとっておいて、この課題では、リハビリの仕事を始めるようになった動機、仕事の苦労と喜び、将来への抱負を書くようにしたい。<BR>
+      <BR>
+      二、表記と表現<BR>
+      <BR>
+      　間違いというわけではないが、表現に工夫の望まれるところがある。添削例参照。<BR>
+      <BR>
+      三、評点<BR>
+      <BR>
+      　<U>ランク：Ｂ　得点７０</U></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="289">書き直した答案</TD>
+      <TD valign="middle" align="center" width="251">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="289" bgcolor="#ffffff">　私がリハビリテーション業務に就きたいと思ったのは、自分の行ったことに対して直接反応が得られる仕事をしたいと思ったからである。その点、リハビリの仕事は、直に感謝されることも多い。リハビリテーションは素晴らしい仕事であると思った。<BR>
+      　私は現在、民間病院でのリハビリテーション業務に就いて１０年になる。作業療法士として、知識、技術ともにまだまだ不十分であるが、自己研鑽に努めながら、目の前の患者さんに最良の医療サービスを提供できるように努力している。ただ、現場で求められるのは、より多くの患者さんを効率的にこなしていくことである。Ｙさんという患者さんを担当したことがあった。Ｙさんは神経難病で、症状が悪化の一途をたどっていた。ご本人もご家族もリハビリを楽しみにされていたが、上司からＹさんのリハビリを早期に打ち切るよう命じられた。その理由は「症状が進行しているので、リハビリを行っても意味がない」からであった。<BR>
+      　国民健康保険制度が危機的状況にあるため、医療費を削減し、在院日数を減少させるためには、効率性というのはある程度必要だと考えられる。しかし、リハビリを含めた医療サービスの対象者は、心身を病んだ生身の人間である。最良の医療サービスは患者さんの生活の質を向上させることであるならば、患者さんの利益が最優先されるべきである。病院の利益や効率性が最優先されるならば、それは本末転倒である。<BR>
+      　病院の倒産や診療所の閉鎖が全国で発生している現状では、病院、特に民間病院は生き残りの手段を講じていかなくてはならない。そのためには、病院は本来の在り方に立ち返り、医療サービスの徹底を図るべきであろう。評判を得て立ち直った病院もある。私はこれからもめぐり会った一人ひとりの患者さんに、最良の医療サービスを提供していきたいと考えている。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約８00字）</TD>
+      <TD valign="top" align="left" width="251" bgcolor="#ffffff"><BR>
+      ※　これはいつのことであったか。そのきっかけとなる出来事を入れたい。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　立ち直った病院名を入れておくとよい。<BR>
+      ◎　これでおしまいの一文も生きたね。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">何とかつじつまを合わせた格好だが、この作文自体を評価すれば、<BR>
+Ｂランク、８０点にはなる。<BR>
+減点分は、療法士になろうとしたきっかけが明確でないことや<BR>
+立ち直った病院名についてなどの具体性に欠けることによる。</P>
+<P align="center"><FONT size="+1"><A href="#up">もどる</A></FONT><BR>
+</P>
+<HR>
+<P align="center"><A name="shinkyu"></A><BR>
+<FONT color="#ff0000">⑦</FONT>　<FONT color="#0000ff">「鍼灸師としての私の夢」</FONT><BR>
+<BR>
+<BR>
+筆者は子育てを終えて、新しい仕事に取り組もうとしている。</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　私は幼い頃から、母や隣りのおばあさんの肩をもんだりたたいたりして、喜ばれておりました。<BR>
+      　子育てが一段落したところで、「ホメオストレッチ」という、ストレスを持った人達をケアする療法に出会いました。これは、人に備わっている自然治癒力を引き出し、生きる力を手助けする方法で、とても魅力のあるものでした。さっそく学び、これを仕事にして１０年になります。<BR>
+      　相手の背中に優しくそっと触れ、相手の体温を感じながら、ゆっくりと圧を加えていきます。自分を押し付けるのではなく、肌を通して相手の気持ちに沿っていくと、相手は心を開いて打ち解け、自ら話をしてくれるようになります。身体が元気になると、次第に気持ちも明るく前向きになっていきます。そうなると、弾みがつき、生き方も積極的になり、望みを叶えようとするようになります。また、ストレスがなくなると、本人だけでなく、家族にも影響を与え、家族も明るくなっていきます。生き生きとした人を見るのは、私も大変うれしく、幸せのお裾分けをしていただいたように、私も元気になっていきます。<BR>
+      　ただ、この方法は、いわゆる民間療法で、資格が公認されていないため、対象が限られてきます。そこで、国家資格を取得するため、この学校で学びたいと思います。癒すことから、鍼灸を加えた治療する分野へと幅を広げ、より多くの人々の役に立つことが私の夢です。<BR>
+      <BR>
+      　　　　　　　　　　　　（以上、約６00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      ←　一段落したころ、<BR>
+      ←　ストレスに悩む<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……触れ、体温を感じながら、<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　影響を及ぼし、<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　治療の対象が<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">何より内容がユニークで、流れ（構成）もよい。<BR>
+書き直さなければならないほどの間違いはない。<BR>
+</P>
+<P align="center"><FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="host"></A><BR>
+<FONT color="#ff0000">⑧</FONT>　<FONT color="#0000ff">「ホスピタリティー」</FONT><BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　私には今年11歳になる娘がいます。娘が３歳のとき、急性白血病になり入院しました。そのとき私は、突然私たちの身に起きたことがどういうことなのか、考えても分からないように感じました。娘も私も、これから始まる治療に対し、大きな不安を感じ、病気の重さで私自身が情緒不安定になってしまいました。そんな状態の中で、看護師さんたちが絶えず励まして支えて下さいました。おかげで娘も治療中、どんなに苦しい時もがんばって乗り切ることができました。病院のスタッフの心から相手を思いやり、常に前向きに明るく患者に接している姿に、本当の手厚いもてなしの心を感じました。<BR>
+      　私は現在病院で看護助手として働いています。そこには多くの患者さんが入院し、日々忙しく過ごしています。スタッフ一同、いろいろな病気で苦しんでいる患者さんが少しでも心が安らぎ、快適に治療に専念できるように努力しています。精神的に不安定になる患者さんもたくさんおられますが、形だけでなく本当の真心をもって患者さんを支えています。建物等の設備は古く、不自由をかけている面もありますが、掃除の徹底をはじめ、様々な心配りをし、できるだけ不快な思いを与えることのないように努力しています。<BR>
+      　病院、ホテルは全く違った業種のように思われますが、ホスピタリティー（手厚いもてなし）という共通の語源をもつそうです。対象とする人の状態の違いはありますが、手厚いもてなしをするという点では、どちらの仕事も同じであると思います。病院も原点に返って、今やサービス業の一種であるべきという考えに変わってきています。<BR>
+      　ホスピタリティーというのは、心から相手の気持ちを考え、満足を感じてもらうことだと私は思います。<BR>
+      　　　　　　　　　　　　　　　（以上、約８00字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……感じました。これから始まる……<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　病院のスタッフの、心から……<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　ここには多くの患者さんが入院しているため、私たちは日々……<BR>
+      <BR>
+      ←　療養に専念できるよう<BR>
+      <BR>
+      ←　……たくさんいますが（敬語は不要）、私たちは形式的にではなく真心をもって接しています。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　病院：hospital、ホテル：hotel、ホスピタリティー：hospitality<BR>
+      ←　両者の対象とする人には違いが<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　この締めくくりは、言葉の意味の繰り返しになっているきらいがあるので、「私たちは……」という形で、抱負か展望を述べるとよい。<BR>
+      　　　</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">こういう課題が出されると、学生なら出だしで<BR>
+「ホスピタリティーとは……」と、とかく定義に走りがちであるが、<BR>
+社会経験のある人は、体験をもって内実を解き明かそうとする。<BR>
+これはその典型例といってよい。</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="289">書き直した答案</TD>
+      <TD valign="middle" align="center" width="251">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="289" bgcolor="#ffffff">　私には今年11歳になる娘がいます。その子が３歳のとき、急性白血病になり入院しました。そのとき私は、突然私たちの身に起きたことがどういうことなのか、考えても分からない思いで、これから始まる治療に対して大きな不安を感じ、病気の重さで私自身が情緒不安定になってしまいました。そんな状態の中で、看護師さんたちが絶えず励まして、気持ちを支えてくれました。おかげで娘も治療中、どんなに苦しい時もがんばって乗り切ることができました。病院のスタッフの、心から相手を思いやり、常に前向きに明るく患者に接している姿に、本当の手厚いもてなしの心を感じました。<BR>
+      　私は現在病院で看護助手として働いています。ここには多くの患者さんが入院しているため、私たちは日々忙しく過ごしています。スタッフ一同、いろいろな病気で苦しんでいる患者さんが少しでも心が安らぎ、快適に療養に専念できるよう努力しています。精神的に不安定な患者さんもたくさんいますが、形式的にではなく真心をもって患者さんに接しています。建物等の設備は古く、不自由をかけている面もありますが、掃除の徹底をはじめ、様々な心配りをし、できるだけ不快な思いを与えることのないように努力しています。<BR>
+      　ところで、病院とホテルは全く違った業種のように思われますが、この２つはホスピタリティー（手厚いもてなし）という共通の語源をもっているそうです。両者が対象とするのは患者と宿泊者という違いはありますが、手厚いもてなしをするという点では、どちらの仕事も同じであると思います。病院も原点に返って、今やサービス業の一種であるべきという考えに変わってきています。<BR>
+      　私たちスタッフ一同は、ホスピタルのもともとの意味を心にしっかり刻んで、患者さんに満足を感じてもらえるよう努めているところです。<BR>
+      <BR>
+      　　　　　　　　　　　　　　　（以上、約８00字）</TD>
+      <TD valign="top" align="left" width="251" bgcolor="#ffffff"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　hospital と hotel の間に hospice（旅人の安息所）や hostel (簡易宿泊所）を入れると、分かりやすくなるかもしれない。<BR>
+      <BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">近頃の病院は親切で、優しくなったといわれるが、<BR>
+そお背景にはこんなこともあるのだろう。</P>
+<P align="center"><FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="jikosuisen"></A><BR>
+<FONT color="#ff0000">⑨</FONT>　<FONT color="#0000ff">「自己推薦書」</FONT></P>
+<P align="center">これは、看護専門学校の社会人枠で志願した場合のものである。<BR>
+字数は1,200字以内となっている。</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">はじめの答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff">　私は患者の生活環境を踏まえた的確なアドバイスとより良いケアを行い、医師や他の医療従事者との連絡を蜜に取り患者の事を第一に考える看護師になりたいと思い、本看護専門学校を志望した。<BR>
+      　私が看護師になりたいと強く願うようになったのは、現在の仕事で多くの難聴者と接してきたからである。私は、５年半前の春に現在の会社に入社して以来、補聴器販売の仕事に従事してきた。入社後２年間は郊外にある営業所で補聴器販売の他に勤怠入力や倉庫管理、売上処理の事務を任されていた。営業所の閉鎖に伴い、２年後に本社に移り、技術部の中の相談をメインとした販売部門で補聴器の相談、販売と、測定語音の研究を行っていた。その３年後の４月に都心の店舗に移り、現在まで補聴器の相談、販売業務を行っている。補聴器の相談に訪れる難聴者の多くは高齢者であったが、中には若い人や小さな子どももいた。乳幼児を始めとする小さい子どもにとって、補聴器で音を伝えることは高齢者以上に大切な事である。音が聞こえないと言葉を発する事ができず、その子の世界は狭いものとなってしまうのである。何人かの子どものうち、ある５歳の子の事が今でも印象に残っている。その子は成長してから手術を受ける事が決まっており、それにより補聴器は必要なくなるのだが、それを見届けることなく、私の異動により会う事はなくなった。その子に対して補聴器の指導を行ううちに、もっと多くの子ども達と接し、成長と病気の回復を手助けしながら見守りたいと思うようになった。<BR>
+      　貴校では「自ら考えて行動できる人になるよう指導している」と学校説明会で伺ったが、これは私に合っていると思った。補聴器の相談という仕事はお客様の話を聞き、どうしたらお客様の希望する聞こえに近づける事ができるのかを経験と知識から自分で考え、アドバイスをしたり、補聴器の調整を行ったりするのである。私の生活や行動についても、自分で考えて動くように変化してきた。貴校の教育理念は私が今まで行ってきた事や性格に合っており、ぜひここで学んで必要な事を吸収ししたいと思った。また、豊かな自然に恵まれているという事も大きな魅力である。<BR>
+      　病院の患者数に対して看護師の数が不足していると言われており、患者の生活や心身について深く話を聞きケアを行うという事は難しいのかもしれない。しかし、多くの病院が立ち並ぶ今、「患者の事を第一に考えて行動する」という姿勢が重要であり、それによって病院が選ばれる時代であると考える。私は貴校で学ぶ事により、生活や精神面のみならず、色々な場面において患者の事を第一に考えて行動する看護師になりたいと思う。そして、小児専門病院でその力を発揮していきたい。<BR>
+      <BR>
+      　　　　　　　　　　　　　（以上、約１１５０字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff">※　この段落の内容は抽象的で分かりにくい。体験を踏まえて、動機を発展の方向へもっていく構成にしたい。<BR>
+      ※　文末は常体（である調）よりも敬体（です・ます調）がよい。<BR>
+      ←※　ここから始めるとよい。<BR>
+      <BR>
+      ←※　「私は、５年半前の……」で改行。<BR>
+      <BR>
+      <BR>
+      ←　……事務を行い、その２年後に本社に移り、相談をメインとした販売部門で……<BR>
+      <BR>
+      <BR>
+      <BR>
+      ←※　「補聴器の相談に……」で改行。<BR>
+      <BR>
+      <BR>
+      ←　……伝えることは……大切なことである。（※　「事」は間違いではないが、現在は通常かな書きとなっている）。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　病気の回復を手助けしながら成長を見守りたいと……<BR>
+      <BR>
+      ←　学校説明会で、貴校では……<BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　「聞こえ」に近づけることができるのかを考え、アドバイスを……するのであるが、このとき大切なのは自分の経験と知識である。私はこれによって納得のいく仕事ができたし、お客様にもじゅうぶん納得していただけたと思う。これに自信を得て、私の生活や行動は自分で考え、……<BR>
+      ←　……と思った。貴校についてはまた、豊かな……<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……立ち並ぶ今、患者をたらい回しにする時代は去り、「患者の……対処する」という姿勢が求められている。これによって病院が選ばれる……<BR>
+      　　　</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+実体験がものを言っており、内容にはじゅうぶん説得力がある。<BR>
+これを、スムーズに読めるものにしてみよう。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="291">書き直した答案</TD>
+      <TD valign="middle" align="center" width="249">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="291" bgcolor="#ffffff"> 　私が看護師になりたいと強く思うようになったのは、現在の仕事で多くの難聴者に接してきたからです。<BR>
+      　私は、５年半前の春に現在の会社に入って以来、補聴器販売の仕事に従事してきました。入社後の２年間は郊外にある営業所で補聴器販売の他に、勤怠入力や倉庫管理、売上処理の事務の仕事を行い、２年後に本社に移って、販売部門で補聴器の相談・販売と、測定語音の研究を行いました。その３年後の４月に都心の店舗に移り、現在まで補聴器の相談・販売業務を行っています。<BR>
+      　補聴器の相談に訪れる難聴者の多くは高齢者でしたが、中には若い人や小さな子どももいます。乳幼児を始めとする小さい子どもにとって、補聴器で音を伝えることは高齢者以上に大切なことです。音が聞こえないと言葉を発することができず、その子の世界は狭いものとなってしまいます。何人かの子どものうち、ある５歳の子のことが今でも印象に残っています。その子は成長してから手術を受けることが決まっており、それにより補聴器は必要なくなるのですが、私の異動により、それを見届けることなく、会うことはなくなりました。その子に対して補聴器の指導を行ううちに、もっと多くの子どもたちに接し、病気の回復を手助けしながら成長を見守りたいと思うようになりました。<BR>
+      　学校説明会で、貴校では「自ら考えて行動できる人になるよう指導している」と伺いましたが、これは私に合っていると思いました。補聴器の相談という仕事はお客様の話を聞き、どうしたらお客様の希望する「聞こえ」に近づけることができるのかを考え、アドバイスをしたり、補聴器の調整を行ったりするのですが、このとき大切なのは自分の経験と知識です。私はこれによって納得のいく仕事ができたし、お客様にもじゅうぶん納得していただけたと思います。これに自信を得て、自分の生活については、自分で考えて行動するようになりました。貴校の教育理念は私が今まで行ってきたことや性格に合っており、ぜひここで学んで必要な事を吸収ししたいと思います。貴校についてはまた、豊かな自然に恵まれている環境も大きな魅力です。<BR>
+      　現在、病院の患者数に対して看護師の数が不足していると言われております。患者一人ひとりの心身について深く話を聞きケアを行うということは難しいのかもしれませんが、多くの病院が立ち並ぶ今、患者をたらい回しにするという時代は去り、「患者のことを第一に考えて対処する」という姿勢が求められ、それによって病院が選ばれる時代にきていると考えられます。私は貴校で学ぶことにより、どんな場面においても患者のことを第一に考えて行動する看護師になり、そして、小児専門病院でその力を発揮していきたいと思います。<BR>
+      <BR>
+      　　　　　　　　　　　　　（以上、約１１５０字）</TD>
+      <TD valign="top" align="left" width="249" bgcolor="#ffffff"><BR>
+      ◎　これで動機がはっきりしたので、以下の経緯が分かりやすくなっている。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ◎　学校の方針に触れておくことも大事。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ◎　学習環境など、学校の魅力に触れてあるのもよい。<BR>
+      <BR>
+      ◎　字数調整のために書き足した話なのだろうが、不自然さはないので、よしとしよう。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ◎　締めくくりとして、抱負もきちんと入っている。<BR>
+      　　　</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+書き方の基本は「実績に基づいて抱負を述べる」ことである。<BR>
+<BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="gyakutai"></A><BR>
+<FONT color="#ff0000">⑩</FONT>　<FONT color="#0000ff">「虐待」</FONT><BR>
+<BR>
+「虐待」には、大きく分けて、3つの種類がある。<BR>
+その3つについて調べたものを、順に紹介しよう。<BR>
+筆者は、福祉関係の仕事を目指す高校生である。<BR>
+<BR>
+<FONT color="#ff0000">⑩</FONT>－<FONT color="#0000ff">１．「児童虐待」</FONT></P>
+<DIV align="center">
+  <TABLE border="1" cellpadding="12" width="600">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" width="351">はじめの答案</TD>
+        <TD valign="middle" align="center" width="189">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" bgcolor="#ffffff" width="351">　児童虐待とは、保護者である親権者、親族、同居者、児童福祉施設長などによる、子供の健全な成長を阻害し、人権を侵害する行為です。「児童虐待防止法」により身体的虐待、心理的虐待、性的虐待、ネグレクト（養育の放棄・怠慢）に分類されています。従来は身体的虐待の割合が最も高かったのですが、近年はネグレクトの割合が著しく上昇しています。<BR>
+        　児童虐待は、親や家庭の問題が複雑に絡み合う中で生じるといわれていて、2011年度に全国の児童相談所が対応した件数は5万９８６２件で、10年前の2.6倍に増えています。<BR>
+        　<BR>
+        　なぜ虐待が起きるのか。その主なものに、育児ノイローゼが原因と考えられるケースがあります。母親の場合、周りに頼れる人がいなくて、夫も仕事で遅くまで帰ってこないとか、子供の世話はきちんとしたいけれど、言うことを聞いてくれないとかが原因で、つい手が出てしまうというケースです。もう一つは、連れ子のケースです。新しい親になじめず、話しかけても返事をしないために親がいらだって、しつけのためと称して体罰を加える。すると、だんだん関係が悪化し、暴力をふるって怪我をさせたり、しなせたりしてしまいます。また、食事を与えないで餓死させてしまうケースもあります。<BR>
+        　幼児期に親からの愛情を受けていない子供たちに必要なのは、信用できる人がいることを感じる機会であり、自らの人生は生きる意味のあるものだと感じる機会です。<BR>
+        <BR>
+        　虐待をなくすためには、対策はいくつかに分かれます。<BR>
+        　一つは、子育てに悩む母親のために、地域の公民館で「子育て講座」を開くことです。東京近郊のある市では「子育て講座」の集まりをもっています。その集まりに参加した若い母親は、同じ悩みを持っている人がほかにもいることが分かって気持ちがほぐれたと言っています。もう一つの大きな対策は、福祉事務所が地域の協力を得て、虐待の早期発見に努めることです。子どもの悲鳴がきこえるという通報を受けると、所員が調査を開始し、その家庭にアドバイスするなどします。場合によっては、その児童を施設で預かるというケースもあります。しかし、この場合、物理的障害を防ぐことはできても、子どもの心理的障害の問題は残ります。<BR>
+        　このように、いろいろな取り組みをしているものの、現在のところは根本的な解決を見るには至っておりません。</TD>
+        <TD valign="top" align="left" bgcolor="#ffffff" width="189"><BR>
+        <BR>
+        ←　この行為は「児童虐待防止法」により……<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　つい手が出てしまい、だんだんエスカレートするケースです。<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　……と感じる機会だといわれます。<BR>
+        <BR>
+        ←　虐待をなくすための対策は、いくつかあります。<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　物理的障害を取り除くことはできても、</TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">
+<BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="kohreisha"></A><BR>
+<FONT color="#ff0000">⑩</FONT>－<FONT color="#0000ff">２．「高齢者虐待」</FONT><BR>
+</P>
+<DIV align="center">
+  <TABLE border="1" cellpadding="12" width="600">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" width="354">はじめの答案</TD>
+        <TD valign="middle" align="center" width="186">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" bgcolor="#ffffff" width="354">　高齢者虐待には、暴行などの身体的虐待、暴言・無視・いやがらせなどの心理的虐待、必要な介護サービスを受けさせない・世話をしないなどの介護・世話の放棄・放任や、高齢者の金銭を勝手に使ってしまうなどの経済的虐待のほか、性的虐待があります。介護施設内では職員による虐待事例もあり、家庭内での被害は圧倒的に女性が多く、ほとんどが同居者からの虐待です。<BR>
+        　2006年に「高齢者虐待防止法」が施行され、市町村や地域包括支援センターが相談窓口として対応していますが、介護疲れや長年の人間関係のもつれなど、複雑な要因がからみ、対応が困難な事例も多くなっています。<BR>
+        　虐待されている高齢者の多くには、何らかの認知症の症例が見られ、認知症による言動の混乱や身体的自立度の低下等により、自分の要望をうまく伝えられないことが、結果として虐待の要因となることがあります。当事者周辺の社会環境が虐待を招く要因になっていることもあり、特に都市部などでは近隣との付き合いが少なく、介護者が問題を抱え込みやすくなるほか、軽微な虐待の早期発見が難しい面もあります。また、他の家族や親戚等の介護への関心が低いことも介護者を孤立させる一因となっています。<BR>
+        　多くの高齢者が、住み慣れた家庭や地域で暮らし続けることを希望しています。そのためにも、地域の人々一人ひとりが日常的に声掛けなどをして助け合うことが望まれます。</TD>
+        <TD valign="top" align="left" bgcolor="#ffffff" width="186"><BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　介護施設内では……虐待事例もあります。家庭内での……。<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　介護者が問題を抱え込みやすくなるため、<BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center"><BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="shogaisha"></A><BR>
+<FONT color="#ff0000">⑩</FONT>－<FONT color="#0000ff">３．「障害者虐待」</FONT></P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="356">はじめの答案</TD>
+      <TD valign="middle" align="center" width="184">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" bgcolor="#ffffff" width="356">　障害者虐待は高齢者虐待と同じように、暴行などの身体的虐待、暴言・無視・いやがらせなどの心理的虐待、必要な介護サービスの利用をさせない・世話をしないなどの介護の放棄、障害者の金銭を勝手に使ってしまうなどの経済的虐待、性的虐待があります。<BR>
+      　「障害者虐待の防止、障害者の養護者に対する支援などに関する法律」が平成24年10月1日に施行されました。この法律が虐待を受ける「障害者」として定義しているのは、障害者基本法にある身体障害、知的障害、精神障害を負う人です。虐待の起こる場所を家庭内に限定せず、福祉施設や職場も想定し、虐待を行う人として、養護者の他、福祉施設の職員や職場の上司等も想定範囲に含めた対策の必要性を明記しています。さらに、虐待問題は虐待者と被虐待者の関係だけにとどまるものでなく、社会全体で共有すべきであるという視点から、虐待を発見した国民には市町村や都道府県に通報する義務を課しています。通報を受けた市町村は、被害者の生命に関わる重大な危険があると判断した場合、家族の許可がなくても家庭内に立ち入って調査することができます。この法律が成立した背景には、障害者虐待という事件が後を絶たないという事実があります。<BR>
+      　障害者の中には自分が虐待されているという認識がなく、発見が遅れているケースもあります。そういったことがないよう、国民一人ひとりと地域の連携が必要です。</TD>
+      <TD valign="top" align="left" bgcolor="#ffffff" width="184"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　この法律では、虐待の起こる場所を……<BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　問題を社会全体で……</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><A name="hinkon"></A><BR>
+<FONT color="#ff0000">⑪</FONT>　<FONT color="#0000ff">「貧困問題」</FONT><BR>
+<BR>
+<BR>
+なかなか目立たず、気づかれないが、<BR>
+身近なところで深刻な事態が起きている。</P>
+<CENTER>
+<TABLE border="1" cellpadding="12" width="600">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" width="348">はじめの答案</TD>
+      <TD valign="middle" align="center" width="192">添削例・諸注意</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" bgcolor="#ffffff" width="348">　社会福祉は貧困との闘いから始まったといわれます。民族紛争、エイズなどの感染症の蔓延、自然環境の破壊が起きている中で、世界中で保健、医療、栄養、教育などが不備・不足の状態にあります。<BR>
+      　日本では、非正規雇用社員、ワーキングプア、ネットカフェ難民に象徴されるように、未曽有の経済不況の中で生活の不安定な人が増え、生活保護申請者が急増しています。<BR>
+      　非正規雇用とは、パート、アルバイト、契約社員、派遣社員など、正社員以外の雇用形態の総称です。実際には正社員と同じように働いていながら、雇用期間が限定されている、労働時間が短い、賃金が時給制、退職金がないなど、正社員とは異なる待遇を受けています。総じて、正社員に比べて低賃金で、しかも、「雇い止め」という実質的な解雇により、会社にとって雇用の調整弁とされています。ワーキングプアとは、文字どおり「働く貧者」のことで、仕事をしているのに、その収入が生活保護水準を下回っているような状態をいいます。<BR>
+      　貧困問題は、経済成長によって解消されるとか、自助努力の問題だとする論調がいまだ支配的な中にあって、現実には「格差」が広がり、生活保護受給者の増加となっています。また、これを食い物にする「貧困ビジネス」の横行や、「子供の貧困」状態が起きるなど、今や大きな社会問題となっています。特に、子供の７人に１人が貧困家庭にあるため、対策が急がれる状況にあります。<BR>
+      　貧困というと、アフリカなどの国を想像しがちですが、身近な、すぐ足もとに起きている問題です。例えば、小学校では給食などは平等にふるまわれているため、「見えない」問題ですが、子供の成長を考えると、社会全体で取り組む必要があります。　</TD>
+      <TD valign="top" align="left" bgcolor="#ffffff" width="192"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　会社にとっての雇用の調整弁</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">試みに、小学生に<BR>
+「きみたちのクラスにも、給食費が払えない家の子が何人かいるんだよ」と話すと、<BR>
+子供たちはきょとんとしている。<BR>
+学校側の配慮の窺えることが、せめてもの救いである。<BR>
+<BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><BR>
+⑫　「……」</P>
+<DIV align="center">
+  <TABLE border="1" cellpadding="12" width="600">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" width="352">はじめの答案</TD>
+        <TD valign="middle" align="center" width="188">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" bgcolor="#ffffff" width="352">　</TD>
+        <TD valign="top" align="left" bgcolor="#ffffff" width="188"></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center"><BR>
+<U><FONT size="+2">準備中</FONT></U><BR>
+<BR>
+<BR>
+<IMG src="a_ilst032.gif" width="90" height="90" border="0"><BR>
+<BR>
+しばらくお待ちください。<BR>
+<BR>
+ご意見・ご希望・ご質問は<A href="mailto:sakubun@dohjoh.com">こちら</A>へ</P>
+<P align="center"><BR>
+<FONT size="+1"><A href="#up">もどる</A></FONT></P>
+<HR>
+<P align="center"><IMG src="013lotus.jpg" border="0" width="588" height="199"><BR>
+</P>
+<CENTER></CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,63 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+  <HEAD>
+    <TITLE>WebARENA Suite フォームメール Version 2.2</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#330033" LINK="#FFFFFF" VLINK="#FFFFFF" text="#FFFFFF">
+    <FONT COLOR="#FFCC55"><B>WebARENA Suite フォームメール Version 2.2</B></FONT>
+    <BR>
+    <FONT SIZE="-1">
+      フォームに送信する内容を入力して、メールが送信される事を確認して下さい。
+      <BR>
+      Version 2では入力内容確認画面の表示・必須入力項目やメールアドレス入力項目の設定などが出来る様になりました。
+    </FONT>
+    <HR><BR>
+
+    <FORM METHOD="POST" ACTION="/cgi-bin/formmail.cgi">
+
+      <B>お名前</B>
+      <BR>
+      <FONT SIZE="-1">
+        ※この項目は<FONT COLOR="#FFCC55">必須入力項目</FONT>に設定されています。
+        何も入力されていない場合はエラーになります。
+      </FONT>
+      <BR>
+      <INPUT TYPE="text" NAME="a" SIZE="20">
+      <INPUT TYPE="hidden" NAME="OPT:NEED:a" VALUE="お名前">
+      <BR><BR>
+
+      <B>メールアドレス</B>
+      <BR>
+      <FONT SIZE="-1">
+        ※この項目は<FONT COLOR="#FFCC55">メールアドレス入力項目</FONT>に設定されています。
+        メールアドレスとして正しい内容が入力されていない場合はエラーになります。
+      </FONT>
+      <BR>
+      <INPUT TYPE="text" NAME="b" SIZE="30">
+      <INPUT TYPE="hidden" NAME="OPT:MAILADDRESS:b" VALUE="メールアドレス">
+      <BR><BR>
+
+      <B>性別</B>
+      <BR>
+      <INPUT TYPE="radio" NAME="c" VALUE="男" CHECKED>男
+      <INPUT TYPE="radio" NAME="c" VALUE="女">女
+      <INPUT TYPE="hidden" NAME="OPT:JPNAME:c" VALUE="性別">
+      <BR><BR>
+
+      <B>コメント</B>
+      <BR>
+      <TEXTAREA NAME="d" COLS="30" ROWS="3"></TEXTAREA>
+      <INPUT TYPE="hidden" NAME="OPT:JPNAME:d" VALUE="コメント">
+      <BR><BR>
+
+      <INPUT TYPE="submit" VALUE="送信"> <INPUT TYPE="reset" VALUE="取消">
+
+    </FORM>
+
+    <BR>
+  </BODY>
+
+</HTML>

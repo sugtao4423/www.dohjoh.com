@@ -1,0 +1,1392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META name="GENERATOR" content="JustSystems Homepage Builder Version 18.0.14.0 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>家庭科作文</TITLE>
+<SCRIPT>
+<!--HPB_SCRIPT_INFO_40
+//HPB_VFX_EVT Element:BODY Event:OnLoad Handler:HpbVfxinit('Layer2','HpbVfx0301','K313',0,0,1); 
+//HPB_VFX_PAR Element:BODY Event:OnLoad LayerID:Layer2 Entry:HpbVfx0301 Param:K313 1stDelay:0 NxtDelay:0 Loop:1 
+//-->
+</SCRIPT><SCRIPT language="JavaScript">
+<!--HPB_SCRIPT_VFX_40
+//
+// Licensed Materials - Property of IBM
+// 83H7290 
+// (C) Copyright IBM Corp. 1995, 1998  All rights reserved.
+//
+var layerId       =  0; var func          =  1; var effectPattern =  2; 
+var startTime     =  3; var nextLayerIdx  =  4; var nextStartTime =  5; 
+var intervalTime  =  6; var repeat        =  7; var endVisibility =  8;
+var posX          =  9; var posY          = 10; var posStartX     = 11;
+var posStartY     = 12; var posEndX       = 13; var posEndY       = 14;
+var stepX         = 15; var stepY         = 16; var frame         = 17;
+var accelerationX = 18; var accelerationY = 19; var angle         = 20;
+var fixedX        = 21; var fixedY        = 22; 
+
+var appVer = parseInt(navigator.appVersion);
+var isNC = (document.layers && (appVer >= 4)); // Netscape Navigator 4.0 or later
+var isIE = (document.all    && (appVer >= 4)); // Internet Explorer  4.0 or later
+var elt;
+elt = new Array;
+var layerobj;
+layerobj = new Array;
+var lastobj;
+
+function HpbVfxinit() {
+  var w_str;
+  if (isNC || isIE) {
+    var n_div = arguments.length / 6;
+    for (var div = 0; div < n_div; div++) {
+      var args = 6 * div;
+      var arg1 = arguments[args];
+      var arg2 = arguments[args+1];
+      var arg3 = arguments[args+2];
+      var arg4 = arguments[args+3];
+      var arg5 = arguments[args+4];
+      var arg6 = arguments[args+5];
+      elt[div] = new Array(arg1,arg2,arg3,arg4,-1,arg5,0,arg6,true,-32767,-32767,-32767,-32767,-32767,-32767,-32767,-32767,40,1.0,1.0,0,-1,-1);
+  } }
+
+  if (isNC) {
+    for (i=0; i < elt.length; i++) {
+      w_str = "document." + elt[i][layerId];
+      layerobj[i] = eval(w_str);
+      if (layerobj[i]) {
+        layerobj[i].init = false;
+        layerobj[i].innerH = window.innerHeight;
+        layerobj[i].innerW = window.innerWidth;
+        layerobj[i].pos_x = layerobj[i].left;
+        layerobj[i].pos_y = layerobj[i].top;
+        layerobj[i].pos_w = layerobj[i].clip.width;
+        layerobj[i].pos_h = layerobj[i].clip.height;
+  } } }
+  if (isIE) {
+    for (i=0; i < elt.length; i++) {
+      w_str = "document.all.item(\"" + elt[i][layerId] + "\")";
+      if (eval(w_str)) {
+        w_str = "document.all.item(\"" + elt[i][layerId] + "\").style";
+        layerobj[i] = eval(w_str);
+        if (layerobj[i]) {
+          layerobj[i].init = false;
+          layerobj[i].innerH = document.body.clientHeight;
+          layerobj[i].innerW = document.body.clientWidth;
+          layerobj[i].pos_x = layerobj[i].pixelLeft;
+          layerobj[i].pos_y = layerobj[i].pixelTop;
+          layerobj[i].pos_w = layerobj[i].pixelWidth;
+          layerobj[i].pos_h = layerobj[i].pixelHeight;
+  } } } }
+
+  if (isNC || isIE) {
+    for (i=0; i < elt.length; i++) {
+      if (layerobj[i]) {
+        if (elt[i][posX] == -32767) elt[i][posX] = layerobj[i].pos_x;
+        if (elt[i][posY] == -32767) elt[i][posY] = layerobj[i].pos_y;
+        if (elt[i][effectPattern].charAt(0) == "A") {
+          if (elt[i][posX] != -32767) elt[i][posEndX] = elt[i][posX];
+          if (elt[i][posY] != -32767) elt[i][posEndY] = elt[i][posY];
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            if (elt[i][posY] != -32767) elt[i][posStartY] = elt[i][posY];
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            if (elt[i][posX] != -32767) elt[i][posStartX] = elt[i][posX];
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "5") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "8") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].innerH;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "B") {
+          if (elt[i][posX] != -32767) elt[i][posStartX] = elt[i][posX];
+          if (elt[i][posY] != -32767) elt[i][posStartY] = elt[i][posY];
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            if (elt[i][posY] != -32767) elt[i][posEndY] = elt[i][posY];
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            if (elt[i][posX] != -32767) elt[i][posEndX] = elt[i][posX];
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "6") {
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "7") {
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].innerH;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "C") {
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posStartX] = layerobj[i].innerW;
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              elt[i][posEndY] = elt[i][posY];
+            }
+          }
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posEndX] = layerobj[i].innerW;
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              elt[i][posEndY] = elt[i][posY];
+            }
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              elt[i][posEndX] = elt[i][posX];
+            }
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+            elt[i][posEndY] = layerobj[i].innerH;
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              elt[i][posEndX] = elt[i][posX];
+            }
+            elt[i][posStartY] = layerobj[i].innerH;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "7") {
+            elt[i][posStartX] = layerobj[i].innerW;
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].innerH;
+          }
+          if (elt[i][effectPattern].charAt(1) == "5") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].pos_h * -1;
+            elt[i][posEndX] = layerobj[i].innerW;
+            elt[i][posEndY] = layerobj[i].innerH;
+          }
+          if (elt[i][effectPattern].charAt(1) == "6") {
+            elt[i][posStartX] = layerobj[i].innerW;
+            elt[i][posStartY] = layerobj[i].innerH;
+            elt[i][posEndX] = layerobj[i].pos_w * -1;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+          }
+          if (elt[i][effectPattern].charAt(1) == "8") {
+            elt[i][posStartX] = layerobj[i].pos_w * -1;
+            elt[i][posStartY] = layerobj[i].innerH;
+            elt[i][posEndX] = layerobj[i].innerW;
+            elt[i][posEndY] = layerobj[i].pos_h * -1;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "D") {
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][stepX] = 4;  elt[i][stepY] = 0;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][stepX] = 0;  elt[i][stepY] = 4;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "F") {
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              elt[i][posEndX] = elt[i][posX] + layerobj[i].pos_w;
+            }
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              if (elt[i][effectPattern].charAt(3) == "1") elt[i][posEndY] = elt[i][posY] + 80;
+              if (elt[i][effectPattern].charAt(3) == "2") elt[i][posEndY] = elt[i][posY] + 160;
+              if (elt[i][effectPattern].charAt(3) == "3") elt[i][posEndY] = elt[i][posY] + 320;
+            }
+            elt[i][stepX] = 0;  elt[i][stepY] = 4;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            if (elt[i][posX] != -32767) {
+              elt[i][posStartX] = elt[i][posX];
+              if (elt[i][effectPattern].charAt(3) == "1") elt[i][posEndX] = elt[i][posX] + 80;
+              if (elt[i][effectPattern].charAt(3) == "2") elt[i][posEndX] = elt[i][posX] + 160;
+              if (elt[i][effectPattern].charAt(3) == "3") elt[i][posEndX] = elt[i][posX] + 320;
+            }
+            if (elt[i][posY] != -32767) {
+              elt[i][posStartY] = elt[i][posY];
+              elt[i][posEndY] = elt[i][posY] + layerobj[i].pos_h;
+            }
+            elt[i][stepX] = 4;  elt[i][stepY] = 0;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "G") {
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posStartX] = 0;
+            if (elt[i][effectPattern].charAt(3) == "1") elt[i][posStartY] = 80;
+            if (elt[i][effectPattern].charAt(3) == "2") elt[i][posStartY] = 160;
+            if (elt[i][effectPattern].charAt(3) == "3") elt[i][posStartY] = 320;
+            elt[i][posEndX] = 1;  elt[i][posEndY] = 1;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "H") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][stepX] = 8;  elt[i][stepY] = 8;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][stepX] = 16;  elt[i][stepY] = 16;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][stepX] = 32;  elt[i][stepY] = 32;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][stepX] = 0;  elt[i][fixedX] = true;  elt[i][fixedY] = true;
+          }
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][stepY] = 0;  elt[i][fixedX] = true;  elt[i][fixedY] = true;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][fixedX] = false;  elt[i][fixedY] = false;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "I") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][posStartX] = 40;  elt[i][posStartY] = 40;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][posStartX] = 80;  elt[i][posStartY] = 80;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][posStartX] = 160;  elt[i][posStartY] = 160;
+          }
+          elt[i][posEndX] = 1;  elt[i][posEndY] = 1;  elt[i][stepX] = -32767;
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posY] += elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 3 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posY] -= elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 1 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][posX] -= elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 0 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            elt[i][posX] += elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 2 / 2;
+            elt[i][frame] = 40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "5") {
+            elt[i][posY] += elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 3 / 2;
+            elt[i][frame] = -40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "6") {
+            elt[i][posY] -= elt[i][posStartY];
+            elt[i][stepY] = Math.PI * 1 / 2;
+            elt[i][frame] = -40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "7") {
+            elt[i][posX] -= elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 0 / 2;
+            elt[i][frame] = -40;
+          }
+          if (elt[i][effectPattern].charAt(1) == "8") {
+            elt[i][posX] += elt[i][posStartX];
+            elt[i][stepY] = Math.PI * 2 / 2;
+            elt[i][frame] = -40;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "J") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][posStartX] = 0;  elt[i][posStartY] = 80;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][posStartX] = 0;  elt[i][posStartY] = 160;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][posStartX] = 0;  elt[i][posStartY] = 320;
+          }
+          elt[i][posEndX] = 1;  elt[i][posEndY] = 1;
+          elt[i][stepX] = -32767;  elt[i][stepY] = 0;
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][accelerationY] = 0.99;  elt[i][frame] = 40;
+        } }
+        if (elt[i][effectPattern].charAt(0) == "K") {
+          if (elt[i][effectPattern].charAt(3) == "1") {
+            elt[i][posStartX] = 40;  elt[i][posStartY] = 40;
+          }
+          if (elt[i][effectPattern].charAt(3) == "2") {
+            elt[i][posStartX] = 80;  elt[i][posStartY] = 80;
+          }
+          if (elt[i][effectPattern].charAt(3) == "3") {
+            elt[i][posStartX] = 160;  elt[i][posStartY] = 160;
+          }
+          elt[i][stepX] = -32767;  elt[i][stepY] = 0;
+          if (elt[i][effectPattern].charAt(1) == "1") {
+            elt[i][posEndX] = 13;  elt[i][posEndY] = 12;  elt[i][frame] = 160;
+          }
+          if (elt[i][effectPattern].charAt(1) == "2") {
+            elt[i][posEndX] = 7;  elt[i][posEndY] = 2;  elt[i][frame] = 160;
+          }
+          if (elt[i][effectPattern].charAt(1) == "3") {
+            elt[i][posEndX] = 11;  elt[i][posEndY] = 4;  elt[i][frame] = 160;
+          }
+          if (elt[i][effectPattern].charAt(1) == "4") {
+            elt[i][posEndX] = 7;  elt[i][posEndY] = 4;  elt[i][frame] = 160;
+        } }
+        if (elt[i][effectPattern].charAt(2) == "1") elt[i][intervalTime] = 200;
+        if (elt[i][effectPattern].charAt(2) == "2") elt[i][intervalTime] = 100;
+        if (elt[i][effectPattern].charAt(2) == "3") elt[i][intervalTime] = 50;
+        if ( elt[i][startTime] >= 0 ) setTimeout( "HpbVfxtimer(" + i + ")", elt[i][startTime] );
+} } } }
+
+function HpbVfxtimer(tid) {
+  if (isNC || isIE) {
+    if (layerobj[tid]) {
+      var func_str;
+      func_str = elt[tid][func] + "( tid, elt[tid], layerobj[tid] )";
+      eval(func_str);
+} } }
+
+function HpbVfxshowobj(obj) {
+  if (obj) {
+    if (isNC) obj.visibility = "show";
+    if (isIE) obj.visibility = "visible";
+    lastobj = obj;
+} }
+
+function HpbVfxhideobj(obj) {
+  if (obj) {
+    if (isNC) obj.visibility = "hide";
+    if (isIE) obj.visibility = "hidden";
+} }
+
+function HpbVfx0001(tid,et,ob) {
+  var x;  var y;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.stepX = et[stepX] * Math.cos(et[angle]);
+      else ob.stepX = (et[posEndX] - et[posStartX]) / et[frame];
+      if (et[stepY] != -32767) ob.stepY = et[stepY] * Math.sin(et[angle]);
+      else ob.stepY = (et[posEndY] - et[posStartY]) / et[frame];
+      if (ob.stepX > 0 && ob.stepX < 1) ob.stepX = 1;
+      if (ob.stepX < 0 && ob.stepX > -1) ob.stepX = -1;
+      if (ob.stepY > 0 && ob.stepY < 1) ob.stepY = 1;
+      if (ob.stepY < 0 && ob.stepY > -1) ob.stepY = -1;
+      if (et[posStartX] != -32767) ob.x = et[posStartX];
+      else if (ob.stepX > 0) ob.x = 0 - ob.pos_w; else ob.x = ob.innerW - ob.pos_w;
+      if (et[posStartY] != -32767) ob.y = et[posStartY];
+      else if (ob.stepY > 0) ob.y = 0 - ob.pos_h; else ob.y = ob.innerH - ob.pos_h;
+      if (et[posEndX] != -32767) ob.posEndX = et[posEndX];
+      else if (ob.stepX > 0) ob.posEndX = ob.innerW - ob.pos_w; else ob.posEndX = 0 - ob.pos_w;
+      if (et[posEndY] != -32767) ob.posEndY = et[posEndY];
+      else if (ob.stepY > 0) ob.posEndY = ob.innerH - ob.pos_h; else ob.posEndY = 0 - ob.pos_h;
+      HpbVfxshowobj(ob);
+      ob.init = true;  ob.frame = 0;
+    }
+    ob.stepX = ob.stepX * et[accelerationX];
+    if (ob.stepX > 0 && ob.stepX < 1) ob.stepX = 1;
+    if (ob.stepX < 0 && ob.stepX > -1) ob.stepX = -1;
+    ob.stepY = ob.stepY * et[accelerationY];
+    if (ob.stepY > 0 && ob.stepY < 1) ob.stepY = 1;
+    if (ob.stepY < 0 && ob.stepY > -1) ob.stepY = -1;
+    ob.x += ob.stepX;  ob.y += ob.stepY;
+    var endX;  var endY;
+    endX = false;  endY = false;
+    if (ob.stepX > 0) if (ob.x >= ob.posEndX) {endX = true;  ob.x = ob.posEndX;}
+    if (ob.stepX < 0) if (ob.x <= ob.posEndX) {endX = true;  ob.x = ob.posEndX;}
+    if (ob.stepX == 0) endX = true;
+    if (ob.stepY > 0) if (ob.y >= ob.posEndY) {endY = true;  ob.y = ob.posEndY;}
+    if (ob.stepY < 0) if (ob.y <= ob.posEndY) {endY = true;  ob.y = ob.posEndY;}
+    if (ob.stepY == 0) endY = true;
+    ob.left = Math.round( ob.x );  ob.top = Math.round(ob.y);
+    if (endX == true && endY == true) {
+      if (et[endVisibility] == false) HpbVfxhideobj(ob);
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+    } else setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} }
+
+function HpbVfx0101(tid,et,ob) {
+  var cl;  var cr;  var ct;  var cb;  var tm;  var x;  var y;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.cs_x = et[stepX]; else ob.cs_x = ob.pos_w / et[frame];
+      if (et[stepY] != -32767) ob.cs_y = et[stepY]; else ob.cs_y = ob.pos_h / et[frame];
+      ob.c_x = 0;  ob.c_y = 0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tm = false;
+    cl = 0;  cr = ob.pos_w;  ct = 0;  cb = ob.pos_h;
+    x = ob.pos_x;  y = ob.pos_y;
+    if (et[fixedX] == false) {
+      if (ob.cs_x > 0) {
+        ob.c_x += ob.cs_x;
+        if (cr > ob.c_x) {
+          cl = cr - ob.c_x;  tm = true;  x = ob.pos_x - ob.pos_w + ob.c_x;
+      } }
+      if (ob.cs_x < 0) {
+        ob.c_x += ob.cs_x;  cr = ob.c_x * -1;
+        if (cr < ob.pos_w) {
+          tm = true;  x = ob.pos_x + ob.pos_w + ob.c_x;
+        } else cr = ob.pos_w;
+      }
+    } else {
+      if (ob.cs_x > 0) {
+        ob.c_x += ob.cs_x;
+        if (cr > ob.c_x) {cr = ob.c_x;  tm = true;}
+      }
+      if (ob.cs_x < 0) {
+        ob.c_x += ob.cs_x;  cl = ob.c_x * -1;
+        if (cl < ob.pos_w) {tm = true;  cl = ob.pos_w - cl;} else cl = 0;
+    } }
+    if (et[fixedY] == false) {
+      if (ob.cs_y > 0) {
+        ob.c_y += ob.cs_y;
+        if (cb > ob.c_y) {ct = cb - ob.c_y;  tm = true;  y = ob.pos_y - ob.pos_h + ob.c_y;}
+      }
+      if (ob.cs_y < 0) {
+        ob.c_y += ob.cs_y;  cb = ob.c_y * -1;
+        if ( cb < ob.pos_h ) {tm = true;  y = ob.pos_y + ob.pos_h + ob.c_y;} else cb = ob.pos_h;
+      }
+    } else {
+      if (ob.cs_y > 0) {
+        ob.c_y += ob.cs_y;
+        if (cb > ob.c_y) {cb = ob.c_y;  tm = true;}
+      }
+      if (ob.cs_y < 0) {
+        ob.c_y += ob.cs_y;  ct = ob.c_y * -1;
+        if (ct < ob.pos_h) {tm = true;  ct = ob.pos_h - ct;} else ct = 0;
+    } }
+    if (isNC) {ob.clip.left = cl;  ob.clip.right = cr;  ob.clip.top = ct;  ob.clip.bottom = cb;}
+    if (isIE) ob.clip = "rect(" + ct + "," + cr + "," + cb + "," + cl + ")";
+    ob.top = y;  ob.left = x;
+    if (tm) setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+    else {
+      if (et[endVisibility] == false) HpbVfxhideobj(ob);
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+} } }
+
+function HpbVfx0201(tid,et,ob) {
+  var cl;  var cr;  var ct;  var cb;  var tm;  var x;  var y;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.cs_x = et[stepX]; else ob.cs_x = ob.pos_w / et[frame];
+      if (et[stepY] != -32767) ob.cs_y = et[stepY]; else ob.cs_y = ob.pos_h / et[frame];
+      ob.c_w = et[posEndX] - et[posStartX];  ob.c_h = et[posEndY] - et[posStartY];
+      ob.c_x = 0;  ob.c_y = 0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tm = false;
+    cl = 0;  cr = ob.pos_w;  ct = 0;  cb = ob.pos_h;
+    x = et[posStartX];  y = et[posStartY];
+    if (ob.cs_x > 0) {
+      ob.c_x += ob.cs_x;
+      if (ob.c_x < (ob.pos_w - ob.c_w)) {
+        cl = ob.c_x;  cr = cl + ob.c_w;
+        tm = true;
+      } else cl = ob.pos_w - ob.c_w;
+    }
+    if (ob.cs_x < 0) {
+      ob.c_x += ob.cs_x;  cr = ob.pos_w + ob.c_x;
+      if (cr > ob.c_w) {cl = cr - ob.c_w;  tm = true;}
+      else cr = ob.c_w;
+    }
+    if (ob.cs_y > 0) {
+      ob.c_y += ob.cs_y;
+      if (ob.c_y < (ob.pos_h - ob.c_h)) {
+        ct = ob.c_y;  cb = ct + ob.c_h;
+        tm = true;
+      } else ct = ob.pos_h - ob.c_h;
+    }
+    if (ob.cs_y < 0) {
+      ob.c_y += ob.cs_y;  cb = ob.pos_h + ob.c_y;
+      if (cb > ob.c_h) {ct = cb - ob.c_h;  tm = true;}
+      else cb = ob.c_h;
+    }
+    if (isNC) {ob.clip.left = cl;  ob.clip.right = cr;  ob.clip.top = ct;  ob.clip.bottom = cb;}
+    if (isIE) ob.clip = "rect(" + ct + "," + cr + "," + cb + "," + cl + ")";
+    x -= cl;  y -= ct;
+    ob.top = y;  ob.left = x;
+    if (tm) setTimeout( "HpbVfxtimer(" + tid + ")",et[intervalTime]);
+    else {
+      if (et[endVisibility] == false) HpbVfxhideobj(ob);
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+} } }
+
+function HpbVfx0301(tid,et,ob) {
+  var x;  var y;  var tx;  var ty;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.step = et[stepX]; else ob.step = (Math.PI * 2) / et[frame];
+      ob.boundX = et[posStartX];  ob.boundY = et[posStartY];
+      ob.angle = 0.0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tx = Math.cos(ob.angle * et[posEndX]) * ob.boundX;  ty = Math.sin(ob.angle * et[posEndY]) * ob.boundY;
+    if (et[fixedX] != 0) tx = Math.abs(tx) * et[fixedX];
+    if (et[fixedY] != 0) ty = Math.abs(ty) * et[fixedY];
+    x = et[posX];  y = et[posY];
+    x += tx * Math.cos(et[angle]);  y += tx * Math.sin(et[angle]);
+    x += ty * Math.cos(et[angle] + (Math.PI / 2));  y += ty * Math.sin(et[angle] + (Math.PI / 2));
+    ob.top = Math.round(y);  ob.left = Math.round(x);
+    if (et[accelerationX] != 1.0 || et[accelerationY] != 1.0) {
+      ob.boundX *= et[accelerationX];  ob.boundY *= et[accelerationY];
+      if (ob.boundX < 4  && ob.boundY < 4) {
+        ob.init = false;
+        if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+        else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+      } else {
+        ob.angle += ob.step;
+        setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+      }
+    } else {
+      if (ob.angle >= (2 * Math.PI)) {
+        ob.init = false;
+        if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+        else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+      } else {
+        ob.angle += ob.step;
+        setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} } } }
+
+function HpbVfx0311(tid,et,ob) {
+  var x;  var y;  var ws;
+  if (ob) {
+    if (ob.init == false) {ob.setp = 0;  HpbVfxshowobj(ob);  ob.init = true;}
+    x = et[posX];  y = et[posY];
+    if (et[fixedX] == true) ws = ob.setp;
+    else {
+      ws = Math.round(Math.random() * 4);
+      if (ws > 3) ws = 0;
+    }
+    if (ws == 1) x += et[stepX];
+    if (ws == 3) x -= et[stepX];
+    if (et[fixedY] == true) ws = ob.setp;
+    else {
+      ws = Math.round(Math.random() * 4);
+      if (ws > 3) ws = 0;
+    }
+    if (ws == 1) y += et[stepY];
+    if (ws == 3) y -= et[stepY];
+    ob.top = Math.round( y );  ob.left = Math.round( x );
+    ob.setp ++;
+    if (ob.setp >= 4) {
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+    } else setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} }
+
+function HpbVfx0401(tid,et,ob) {
+  var x;  var y;  var tx;  var ty;
+  if (ob) {
+    if (ob.init == false) {
+      if (et[stepX] != -32767) ob.step = et[stepX]; else ob.step = (Math.PI * 2) / et[frame];
+      ob.angle = 0.0;
+      HpbVfxshowobj(ob);
+      ob.init = true;
+    }
+    tx = Math.cos((ob.angle * et[posEndX]) + et[stepY]) * et[posStartX];
+    ty = Math.sin((ob.angle * et[posEndY]) + et[stepY]) * et[posStartY];
+    x = et[posX];  y = et[posY];
+    x += tx * Math.cos(et[angle]);  y += tx * Math.sin(et[angle]);
+    x += ty * Math.cos(et[angle] + (Math.PI / 2));  y += ty * Math.sin(et[angle] + (Math.PI / 2));
+    ob.top = Math.round(y);  ob.left = Math.round(x);
+    if (Math.abs(ob.angle) >= (2 * Math.PI)) {
+      ob.init = false;
+      if (et[repeat] == true) setTimeout("HpbVfxtimer(" + tid + ")",et[startTime]);
+      else if (et[nextLayerIdx] >= 0) setTimeout("HpbVfxtimer(" + et[nextLayerIdx] + ")",et[nextStartTime]);
+    } else {
+      ob.angle += ob.step;
+      setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} } }
+
+function HpbVfx0501(tid,et,ob) {
+  if (ob) {
+    if (ob.init == false) {HpbVfxshowobj(ob);  ob.init = true;}
+    var px;  var py;
+    if (isNC) {px = window.pageXOffset;  py = window.pageYOffset;}
+    if (isIE) {px = document.body.scrollLeft;  py = document.body.scrollTop;}
+    ob.top = Math.round(py + et[posY]);  ob.left = Math.round(px + et[posX]);
+    setTimeout("HpbVfxtimer(" + tid + ")",et[intervalTime]);
+} }
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffcc" text="#003300" onload="HpbVfxinit('Layer2','HpbVfx0301','K313',0,0,1);">
+<CENTER>
+<TABLE border="1" width="600" cellpadding="12">
+  <TBODY>
+    <TR>
+      <TD align="center" bgcolor="#ffffcc" width="107"><IMG src="food009.gif" width="128" height="85" border="0"><BR>
+      </TD>
+      <TD valign="middle" align="center" width="304"><A name="upper"><FONT face="ＭＳ ゴシック" color="#ff00ff" size="+2">作文ワールド</FONT><FONT color="#0000ff" size="+2">Ⅸ</FONT></A><BR>
+      <BR>
+      <FONT size="+4"> </FONT><FONT size="+4" color="#ff00ff">家</FONT><FONT size="+4" color="#0000ff">庭</FONT><FONT size="+4" color="#009999">科</FONT><FONT size="+4" color="#0000ff">作</FONT><FONT size="+4" color="#ff00ff">文</FONT><BR>
+      <BR>
+      <BR>
+      <FONT size="+1">－　<A href="#contents">もくじ</A>　－</FONT></TD>
+      <TD valign="middle" align="center" bgcolor="#ffffcc" width="102"><IMG src="a_ilst192.gif" width="95" height="105" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<CENTER>
+<TABLE border="1" cellpadding="12">
+  <CAPTION><A name="contents"></A><BR>
+  <U><A name="mokuji">も　く　じ</A></U></CAPTION>
+  <TBODY>
+    <TR>
+      <TD valign="top" align="left" width="548" height="273">◯　<A href="#kyushoku">「給食」特集</A><BR>
+      12．<A href="#kyushoku">「バイキング給食」</A>　　　　　……　小４　桃花さん<BR>
+      13．<A href="#request">「リクエスト給食」</A>　　　　　　……　小５　悠雄くん<BR>
+      14．<A href="#select">「セレクト給食」</A>　　　　　　　……　小４　桃花さん<BR>
+      15．<A href="#nabe">「鍋給食」</A>　　　　　　　　　　……　小６　彩奈さん<BR>
+      16．<BR>
+      <BR>
+      １．<A href="#chori1">「調理実習」</A>　　　　　　　　　 ……　小６　虎太郎くん<BR>
+      ２．<A href="#gohan">「ご飯とみそ汁」</A>　　　　 　　 ……　小５　悠くん<BR>
+      ３．<A href="#apron">「エプロンづくり」　</A>　　　　　　……　中２　咲歩さん<BR>
+      ４．<A href="#tamamusubi">「玉むすび玉どめ」</A>　　　　　 ……　小５　笑さん<BR>
+      ５．<A href="#kohji">「麹菌」</A>　　　　　　　　　　　　 ……　中２　ひなのさん<BR>
+      ６．<A href="#oyakoryohri">「親子料理教室」</A>　　　　　　 ……　小４　直樹くん<BR>
+      　　――――――――――<BR>
+      ７．<A href="#kateikabu">「家庭科部の立ち上げ」</A>　　……　中２　日菜さん<BR>
+      　　――――――――――<BR>
+      ８．<A href="#7rin">「七りん体験」</A>　　　　　　　　　……　小３　直樹くん<BR>
+      ９．<A href="#kanpyo">「かんぴょう作り」</A>　　　　　　　……　小５　佳志乃さん<BR>10．<A href="#saiho">「おさいほう」</A>　　　　　　　　　……　小４　美花ちゃん<BR>
+      11．<A href="#club">「クラブ活動見学」</A>　　　　　　……　小３　令於くん<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<HR>
+<P align="center">　<IMG src="greenb.gif" width="14" height="14" border="0"><A href="newpage6.htm">作文ワールド（原点）</A>　<A href="newpage38.htm">Ⅱの表紙へ</A>　<A href="newpage53.html">作文ワールドⅢ（社会科作文）</A>　<BR>
+<A href="newpage67.html">Ⅳ（理科作文）</A>　<A href="newpage70.htm">Ⅴ（スポーツ作文）</A>　<A href="newpage80.html">Ⅵ（七五の四行詩）</A>　<A href="newpage91.html">Ⅶ（図工作文）</A><BR>
+<A href="newpage104.html">Ⅷ（エトセトラ）</A>　　　<A href="newpage118.html">Ⅹ（作文のこころ）</A><BR>
+<A href="newpage105.html">「東日本大震災」の作文・第１部</A>　　<A href="newpage107.html">第２部・第３部</A><BR>
+<BR>
+<IMG src="rdot.gif" width="16" height="16" border="0"><A href="index.htm">トップページ</A>　<IMG src="bdot.gif" width="16" height="16" border="0"><A href="newpage19.htm">小学生の作文</A>　<IMG src="blueb.gif" width="14" height="14" border="0"><A href="newpage72.html">公立中高一貫校入試の作文</A><BR>
+<BR>
+<A href="newpage113.html">作文打出の小づち</A><A href="newpage113.html">・総合案内</A><A href="newpage113.html"><BR>
+            </A><A href="newpage114.html">作文編</A><A href="newpage113.html">　　</A><A href="newpage115.html">国語編　</A><A href="newpage113.html">　</A><A href="newpage116.html">小論文編</A><A href="newpage113.html">　　</A><A href="newpage117.html">閑 話</A></P>
+<HR>
+<P align="center"><A name="chori1"></A><BR>
+<FONT color="#ff0000">１</FONT>．<FONT color="#0000ff">「調理実習」</FONT>　（小６　高橋虎太郎）</P>
+<P align="center"><BR>
+最初に、調理や工作などの作文の模範例を紹介しよう。<BR>
+書き方（構成）基本は、<BR>
+材料　→　作る手順　→　出来栄え　である。</P>
+<CENTER>
+<TABLE border="1" width="600" cellpadding="12">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+      <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　３月６日、２時間目と３時間目に調理実習をしました。ポテトサラダサンドと卵サンドを作りました。<BR>
+      　材料は人参、きゅうり、じゃがいも、卵、マヨネーズ、食パンで、調味料として塩、胡椒を用意しました。<BR>
+      　ポテトサラダサンドは、まず、じゃがいもの皮をむき、人参は銀杏切り、きゅうりは輪切り、ハムは短冊切りにします。ぼくの班は男子２人と女子１人で、ぼくはじゃがいもの皮むきとゆでる係しました。皮をむいたじゃがいもを、水の入った鍋に入れ、柔らかくなるまでゆでます。途中で人参も入れます。ずっとゆでていると、白い泡のようなあくが出てきて、それを取り除きます。箸が突きささるぐらい柔らかくなったら、じゃがいもと人参を出して、ジャガイモをつぶし、水を捨てた鍋にもう一度入れて粉ふきをします。鍋を上下・左右に振って、いもの水分を飛ばします。これで、いもがふかふかになります。粉ふきをしたいもに、人参、きゅうり、ハム、マヨネーズを加えてまぜます。そこに塩や胡椒で味付けをし、２枚のパンにはさんで、出来上がりです。<BR>
+      　卵サンドのほうは、卵を鍋に入れ、卵がひたるぐらい水を入れて、８分間ゆでます。ゆで具合で卵の固まり方がちがいます。ここで失敗して、半熟卵になってしまった班もありました。ぼくの班はうまくいきました。ゆでた卵の皮をむき、卵切り器で細かくします。それにマヨネーズをまぜ、パンにはさんで出来上がりです。<BR>
+      　どっちのサンドも、見た目もよく、おいしかったです。次の調理実習では、お菓子を作ります。これは小学校最後の実習です。こっちも楽しみです。</TD>
+      <TD valign="top" align="left" width="285" bgcolor="#c1ffbf">←○　「いつ、どこで、何があったか」、始めにはこれも大切だね。<BR>
+      <BR>
+      ←○　用意した材料を先に書いてあるので、作り方の手順がわかりやすい。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←○　「あく取り」や「粉ふき」という大事なことが書かれているので、おいしそうだという予感がする。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←○　失敗例の入っているのもいいね。<BR>
+      <BR>
+      <BR>
+      <BR>
+      ←○　出来栄えが、よい締めくくりになっている。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+おしまいの段落の終わりの２文はなくてもよいが、<BR>
+「最後の調理実習」は、<BR>
+「クレープ」と「フルーツポンチ」づくりで、<BR>
+とてもおいしそうに、作文もよく書けていた。<BR>
+<BR>
+<A href="#upper">　もどる</A></P>
+<HR>
+<P align="center"><A name="gohan"></A><BR>
+<FONT color="#ff0000">２</FONT>．<FONT color="#0000ff">「ご飯とみそ汁」</FONT>（小５　松原　悠）</P>
+<P align="center"><BR>
+実習の単なる記録ではない、意義のある作文を紹介しよう。</P>
+<CENTER>
+<TABLE border="1" width="600" cellpadding="12">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+      <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　12月12日、水曜日、1・2時間目の家庭科の授業で、ご飯とみそ汁を作りました。ぼくの班は男子が２人、女子が３人で、ご飯係とみそ汁係に分かれました。ぼくはみそ汁を担当しましたが、班長なので、ご飯も少し手伝いました。<BR>
+      　朝の会が終わって、先に教室でエプロン、三角巾、マスクをつけて行こうとしましたが、みんなエプロンや三角巾のつけ方が分からなかったので、ぼくが教えてあげました。<BR>
+      　家庭科室に入って、先生に作り方の流れを聞いて、いよいよスタートしました。まず、手を洗いました。だしに使うにぼしの頭と内ぞうをとって、半分にわってなべに入れ、水を入れてわかしました。次に、大根、ねぎ、油あげを切りました。切っている間に、だしのにおいがしてきたので、にぼしをお玉で出しました。先生に、「かたい物から入れてね」と言われたので、すぐに大根を入れました。５分ぐらいしてから油あげを入れ、やわらかくなるまでにて、ねぎを入れる前にみそを入れました。先生には「どちらが先でもいいよ」と言われ、みんなはねぎを先に入れていたけど、ぼくたちの班では「ねぎを後にしてほしい」という人がいたので、先にみそを入れてだし汁でときました。ふっとうしてきたところで火を弱くして、みじん切りにしたねぎを入れました。ご飯もちょうどたきあがっていました。<BR>
+      　食べてみると、大根が厚かったけど、油あげやねぎはちょうどよいぐらいに切れていました。ご飯はガスがまでたいたのに、おこげもなく、ふわふわにおいしくたけていました。<BR>
+      　家庭科でご飯のたき方とみそ汁の作り方を習うのは、ご飯とみそ汁は日本の伝統食で、これさえ覚えておけば、大きくなってからも自分で生活していけるからなのだそうです。ぼくはこれを、家でもっと練習したいと思います。</TD>
+      <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ※　「まず、手を洗いました」を、「家庭科室に入って」の次にもってくる。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      〇　「ねぎを後にして」と言った人は、ねぎの香りを楽しもうとしたのかな。<BR>
+      <BR>
+      <BR>
+      ←　油あげはちょうどよいぐらいに切れていて、ねぎはきれいに浮いていました。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+おしまいの段落が光っている。<BR>
+忘れずに書き留めておいたのは、立派！</P>
+<P align="center"><BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="apron"></A><BR>
+<FONT color="#ff00ff">３</FONT>．<FONT color="#0000ff">「エプロン作り」</FONT>（中２　椎谷咲歩）<BR>
+<BR>
+</P>
+<CENTER>
+<TABLE border="1" width="600" cellpadding="12">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+      <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　３か月ぐらい前の１０月から、家庭科でエプロン作りが始まりました。私は、小学校５年生以来、裁縫セットやミシン、アイロンに触れていないので、うまく仕上がるか心配でした。私は今回の作業を通して、「ミシンの苦手を克服する」という目標を持ちました。<BR>
+      　初めに、エプロンの生地とデザインを決めました。私はその頃、イギリスの歌手グループが好きだったので、イギリスの国旗が描いてある生地を選び、また、ポケットもイギリスの国旗のデザインにしました。<BR>
+      　次に、エプロンのデザインの線を生地に書き、それに沿って生地を切っていきました。体の部分のほか、肩ひも、きんちゃくも切り分け、いよいよミシンで縫い合わせていきました。思っていたよりも生地がスムーズに流れていきました。<BR>
+      　一番大変だったのは、ポケットです。私はイギリスの国旗にしたので、エプロン本体に付ける時、ミシンで縫ってしまうと、白や赤の布の部分に糸が重なってしまい、そこの部分が目立ってしまいます。そこで、私は手縫いですることにしました。慎重に縫っていったので、２時間続きの授業も、ポケットを縫い付けたところで終わってしまいました。次の時間に肩ひもやくるみボタンを付けて仕上がりました。<BR>
+      　今回のエプロン作りで、苦手だったミシンをうまく使えるようになり、その上、手縫いもいいなと思いました。</TD>
+      <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　目標を立てました。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　ミシンで縫ってしまうと、白や赤の布の部分に糸が重なって、そこの部分が目立ってしまいます。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……ミシンを、あっ気ないほどうまく……</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><BR>
+ミシンをうまく使えたことばかりでなく、手縫いのよさにも触れている。<BR>
+この作文のよさは、こんなところにもある。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A><BR>
+</P>
+<HR>
+<P align="center"><A name="tamamusubi"></A><BR>
+<FONT color="#ff00ff">４</FONT>．<FONT color="#0000ff">「玉むすび玉どめ」 </FONT>（小５　北川　笑）</P>
+<CENTER>
+<TABLE border="1" width="600" cellpadding="12">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+      <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　６月７日（木）の家庭科の時間に、玉むすびと玉どめの練習をしました。玉むすびというのは、ぬい始めた時に糸が抜けないようにするために指で糸のはしに作る玉です。玉どめというのは、ぬい終わった糸が抜けないようにするために作る玉で、はりに糸をぐるぐるまきつけて玉にします。<BR>
+      　最初に、玉むすびを５回しました。すぐに終わったので、他の人に教えてあげました。次に、玉どめを５回しました。これもすぐに終わってしまったので、他の人に教えることになりました。みんなに次から次へと教えていると、ミーちゃんがにやにやしながら、<BR>
+      　「えみ、男子にモテモテじゃん。よかったわねえ。えみの取り合いだ」<BR>
+      と言いました。わたしは、こんな時にモテモテはうれしくないし、べつに取り合いになってもいないのにと思いました。<BR>
+      　次の日曜日（10日）は授業参観日で家庭科があり、その日は、もっと大変なボタン付けの練習があります。でも、私はもうボタン付けはかんたんにできるので、ミシンでぬい物をしようと思います。楽しみです。</TD>
+      <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……まきつけて、はりを抜いて玉にします。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ○　ミーちゃんは愉快な子だね。親友なんだね。<BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      <BR>
+      ←　……できるので、また、できた人は他のことをしていてもよいということなので、ミシンで……</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">この「玉むすび玉どめ」といい、「ご飯とみそ汁」といい、<BR>
+家庭科の授業ではほんとうに実生活に役立つことをしている。<BR>
+<BR>
+この作文ではミーちゃんが彩りを添えている。<BR>
+<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="kohji"></A><BR>
+<FONT color="#ff0000">５</FONT>．<FONT color="#0000ff">「麹菌」（こうじきん）</FONT>　（中２　馬路ひなの）</P>
+<P align="center">梅雨といえば、カビ。カビといえば、「カビが生える」とか、<BR>
+「カビくさい」とか、あまりいい意味で使われることはない。<BR>
+しかし、<BR>
+カビは人間生活と、とても密接な関係にある。<BR>
+そんな作文を紹介しよう。<BR>
+</P>
+<CENTER>
+<TABLE border="1" width="600" cellpadding="12">
+  <TBODY>
+    <TR>
+      <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+      <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+    </TR>
+    <TR>
+      <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　先週の家庭科の授業で、アルペルギルス・オリゼというカビをテーマにした、和食の特集番組を見ました。このカビは麹菌で、しょうゆやお酒などの和食特有の「うまみ」を出すのに欠かせないそうです。しょうゆを作るとき、大豆を煮て麹菌をかけて何日か置くと、カビが大豆の表面全体に繁殖します。お酒の場合も同様で、蒸したお米に麹菌をふりかけます。<BR>
+      　この麹菌は日本にしかなく　京都には麹菌だけを商売にしている店があります。そのお店には鎌倉時代から枯れさせないように培養してきた麹菌が残っています。このカビは自然界からのものではなく、人が生み出したもので、よりおいしいカビを選んで残しています。しょうゆやお酒のほか、みりん、みそ、酢にも使われています。身の回りにあるこれらの調味料が鎌倉時代から受け継がれてきたカビによってできていることに感動しました。<BR>
+      　和食にとって欠かせないものが、このようなカビによって作られていることを初めてしりました。このことを習う少し前の12月に、和食がユネスコの無形文化遺産に登録されました。その和食のもとにあるのが麹菌なので、麹菌が誇らしく思えました。</TD>
+      <TD valign="top" align="left" width="285" bgcolor="#c1ffbf">←　3学期の最初の家庭科の授業で、<BR>
+      <BR>
+      ←　欠かせないものです。<BR>
+      <BR>
+      <BR>
+      ←　ふりかけると、糀（こうじ）ができます。<BR>
+      <BR>
+      <BR>
+      ←　麹菌が受け継がれています。<BR>
+      <BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center">和食はカビに支えられてきたとも言える。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="oyakoryohri"></A><BR>
+<FONT color="#ff0000">６</FONT>．<FONT color="#0000ff">「親子料理教室「</FONT>（小４　細谷直樹）<BR>
+<BR>
+直樹くんには<BR>
+「工作のことでも、料理のことでも、材料と作り方を必ず書いておくんだよ」と<BR>
+話したら、次のような作文ができた。<BR>
+句読点の打ち方のほか、若干の表現を直している。<BR>
+<BR>
+※　読みやすくするために、ここでは段落の間を空けてある。</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="315">書き直した作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　　7月25日金曜日、学校でサマースクールの親子料理教室がありました。ぼくはお母さんと参加しました。作ったのは、トマトの冷製パスタ、ズッキーニのチーズ焼き、ぷるぷるデザートです。もう1組の親子と4人で作りました。<BR>
+        <BR>
+        　最しょに、トマトの冷製パスタを作りました。材料はスパゲッティ３００ｇ、トマト４こ、オリーブオイル１２０ｇ、塩大さじ１ぱい、にんにく４かけ、バジル２かぶ、それに、こしょうです。<BR>
+        　作り方は、①トマトを湯むきにして、角切りにする。②それに塩こしょうをつけて、冷やしておく。③にんにくをみじん切りにして、オリーブオイルでいためる。④バジルをみじん切りにする。⑤スパゲッティをゆでて、水で冷やす。⑥4つのお皿にもりつけて、出来上がり。<BR>
+        <BR>
+        　次に、ぷるぷるデザートを作りました。材料はぶどうジュース２００ｇ、さとう２０ｇ、かたくり粉５０ｇ、サイダー４００ｇ、みかんとパイナップルのフルーツ缶づめ１００ｇです。<BR>
+        　作り方は、①ぶどうジュース、さとう、かたくり粉をなべに入れてよく溶く。②加熱する。③どろどろになっていくので、こげつかないようによくかきまぜ、ぷるぷるのかたまりになったら、火を止める。④ボウルに冷水を入れておく。⑤スプーン2本でぷるぷるを１口ずつすくって丸め、冷水に放つ。⑥冷蔵庫で冷やす。⑦水を切ってボウルに入れ、サイダーとフルーツを入れて、出来上がり。<BR>
+        <BR>
+        　最後に、ズッキーニのチーズ焼きを作りました。材料はズッキーニ１本、しらす干し大さじ２はい、卵２こ、細切りチーズ６０ｇ、小麦粉大さじ２はい、塩少々、こしょう、サラダ油です。<BR>
+        　作り方は、①ズッキーニを、皮をつけたまま細切りにする。②それにしらす干し、卵、チーズ、小麦粉、塩、胡椒を入れて、さっと混ぜる。③フライパンにサラダ油をしいて、お好み焼きのように焼く。これで、出来上がり。<BR>
+        <BR>
+        　作り終わった後、そのまま家庭科室で食べました。どれもおいしかったけど、一番おいしかったのはトマトの冷製パスタです。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　塩こしょうをして、<BR>
+        <BR>
+        ◎　作り方の手順に番号の付いているのがいいね。<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　プルプルのかたまりができたら<BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">おいしそうな匂いが漂ってくる。それは、<BR>
+作る手順が材料とともに書かれているからなのだろう。<BR>
+<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="kateikabu"></A><BR>
+<FONT color="#ff0000">７</FONT>．<FONT color="#0000ff">「家庭科部の立ち上げ」 </FONT>（中２　椎谷日菜）<BR>
+<BR>
+新たに部を立ち上げるというのは、どいうことなのか、<BR>
+滅多に聞けない話を紹介しよう。</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="340">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="200">添削例</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" bgcolor="#ffffff" nowrap width="340">　私は家庭科部に所属しています。１年生の最後のほうで、友達とその部を立ち上げました。<BR>
+        　私は１年生の時、音楽部に所属していましたが、部の中心の人たちが選んだ歌しか歌わず、私たちの提案した歌は歌ってくれなかったので、だんだん部活が嫌になっていきました。１月になると、サボって、行かない日が多くなりました。私は小学校の５，６年の時、料理クラブに入っていたので、中学でも料理部のような部活があればいいなと思っていました。しかし、中学には料理部も家庭科部もありませんでした。だから、私は音楽部に入ったのですが、よく「家庭科部があったらいいのになあ」と口にしていました。音楽部が嫌になっていた２月のある日、ある友だちが「家庭科部をつくろうよ」と言ってきました。最初は、つくるなんて大変そうだし、心配だなと思っていましたが、自分が入りたかった部だし、つくるなんておもしろそうだなと思い、私も立ち上げる一人になりました。<BR>
+        <BR>
+        　私の学校の、部を立ち上げる条件は３つあります。１つ目は3人以上の加入者がいること、2つ目は顧問の先生がいること、3つ目は活動場所を確保していることです。この時点で、部の加入者はわたしを入れて４人いましたが、一応同じクラスの友だちに声をかけてみました。すると、２人が加わって、計６人になりました。陸上部から２人、音楽部から２人、水泳部と天文科学部からそれぞれ１人と、様々な部から集まりました。この６人で、生活指導主任で部活担当の先生の所へ行って、家庭科部立ち上げの話をしました。先生は「ふ～ん」と言って聞いていましたが、加入者が６人いるのを見て、「分かりました。考えておきます」と言ってくれました。<BR>
+        　残る条件はあと２つです。私たちは放課後を使って、顧問の先生についての話し合いを始めました。学校内で顧問をしていない先生はいないということで、学年の先生はどうかという意見が出ました。しかし、どの先生も家庭科っていう感じの先生ではありません。一番の希望は女の先生でした。家庭科の先生は女の先生で、希望にぴったりなのですが、ダンス部の顧問でした。でも、一応訪ねてみようと、行ってみたのですが、その先生はいつも家庭科室にいるわけではなく、また、3年生の先生だったので、何日か訪ね続けて、やっと会えました。私たちは全員で、家庭科部をつくりたいことと顧問のことを話しました。いきなりだったので、先生は最初驚いていましたが、自分も家庭科部をつくりたいと思っていたので、できればつくりたいと言ってくれました。2つの部をかけもちしてもよいことも話してくれました。これで顧問の先生が決まりました。活動場所も家庭科室でよいと言ってくれました。これで、部を立ち上げるための３つの条件がそろいました。<BR>
+        <BR>
+        　私たちは改めて部活担当の先生の所へ行きました。先生に、顧問の先生と活動場所が決まったことを話しました。先生は職員会議で話しておくと言いました。教室に戻って、私たちは「やったー」「ほんとうに家庭科部ができそうだよ」と叫びました。<BR>
+        　数日後、部活担当の先生に呼び出されました。6人で行くと、先生は「会議で部について話しました。今着々と進んでいます」と言いました。嬉しさがこみ上げてきましたが、その時は何とか抑えて、「ありがとうございます」」とだけ言いました。<BR>
+        　その後も、何度か先生に呼び出され、家庭科部設立のために学校が動いていることや４月の新学期には立ち上がりそうだと聞きました。毎週月曜日にある全校集会で、家庭科部ができるという話をしてくれました。最初は「え～っ」という声も聞こえて、ざわつきましたが、だんだん静かになり、みんな聞いてくれました。ドキドキしましたが、その部を立ち上げた一人が私だと思うと、「これってスゴイことなんだな」と思いました。<BR>
+        　春休みが近づいたころ、部活加入調査がありました。その調査票にははっきりと「家庭科部は、部としての条件を満たしましたので、新たに設立されます」と書かれていました。その文を見て、自分たちで家庭科部を立ち上げたのだという達成感がわいてきました。一から立ち上げた部がとても誇らしく思えました。あの時、友だちといっしょに立ち上げようと話して本当によかったと思いました。<BR>
+        <BR>
+        　６月現在、１年生が３人入ってきて、家庭科部の人数は９人です。私は家庭科部の一代目、副部長として一生懸命活動しています。裁縫をしたり、料理をしたり、おしゃべりをしたりして過ごしています。放課後はとても楽しい時間です。</TD>
+        <TD valign="top" align="left" bgcolor="#c1ffbf" width="200"><BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ※　「私は小学校の……」で改行する。<BR>
+        ←　料理部のような部が……<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　６人の内わけは、陸上部から……<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←◎　そうだよ、すごいことなんだ。学校を動かして、しかも、承認されたんだからねえ。<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　家庭科部の初代副部長として</TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">拍手！<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="7rin"></A><BR>
+<FONT color="#ff0000">８</FONT>．<FONT color="#0000ff">「七りん体験」</FONT>（小３　細谷直樹）<BR>
+<BR>
+「七りんって、なに？」という子が多いかもしれない。<BR>
+辞書によると、<BR>「しちりん（七厘、七輪）」……（物を煮るのに値７厘の炭で足りるという意味からだという）<BR>
+焜炉（こんろ）の一種。多くは土製。（広辞苑）<BR>
+１厘というのは1000分の１円に当たるが、今のお金にするといくらになるかというと、……<BR>
+と、きりがないので、要するに、これはコンロで、<BR>
+これを使えば燃料代が安くて済んだとしておこう。<BR>
+</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　３月４日、火曜日の1，2時間目に「七りん体験」がありました。<BR>
+        　ベランダに出ました。ぼくのはんは8人ぐらいで、ぼくは火ばさみの係です。まず、七りんの中に新聞紙を入れて、先生にカッチャマンで火をつけてもらいました。その上に炭と豆炭を入れて、下からうちわであおいで、火を強くしました。でも、すぐに火は消えてしまいました。もう1回つけてもらいました。うちわであおいだら、はいが目の中に入って、なみだが出ました。うちわであおいでいたら、火のついた新聞紙がとんで、ベランダのコンクリートの上に落ちました。それを火ばさみではさんで、七りんの中にもどしました。火事にならなくてよかったと思いました。どんどんあおいでいったら、火が炭にもえうつって、炭も豆炭も赤くなってきました。<BR>
+        　金あみをのせて、もちをやきました。少したってひっくりかえすと、茶色のこげ目がついていました。ぷくぷくとふくらんできたので、のりをまいて、しょうゆを付けて食べました。かりかりしていて、とてもおいしかったです。<BR>
+        　おいしかったのは、七りんに空気がよく通るくふうがしてあったからだと思いました。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　炭と豆炭をのせて、<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　ぼくはそれを火ばさみで……<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　……ふくらんできたので、お皿にとって、しょうゆをつけて、のりをまいて……<BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">おいしかったわけを考えているのがよい。<BR>
+体験の意味があるというものだ。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A><BR>
+</P>
+<HR>
+<P align="center"><A name="kanpyo"></A><BR>
+<FONT color="#ff0000">９</FONT>．<FONT color="#0000ff">「かんぴょう作り」</FONT>（小５　大谷佳志乃）<BR>
+<BR>
+</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="315">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　８月１４日、私は長野のおばあちゃんの家で、おばあちゃんとお母さんといっしょにかんぴょうを作りました。<BR>
+        　かんぴょうは、夕顔という野菜をむいて作ります。夕顔は長さが約５０センチメートル、太さが約15センチメートルです。始めに夕顔を横にして３等分し、それぞれの皮を２ミリぐらいの厚さでむきます。中の白い身を１センチの幅で切って、木の機械にのせ、２ミリの厚さで切っていきます。どんどん切っていくと、１㍍５０㎝の長さになりました。それを棒につるし、かわくまで干します。<BR>
+        　私たちが東京に帰る時は、まだかわいていなかったので、１５本ぐらい持って帰りました。物干しざおにつるして、１日ほしたら、からからにかわきました。これで、かんぴょうは完成です。<BR>
+        　私はお母さんと、そのかんぴょうでかんぴょう巻きを作りました。最初に水に５分つけ、ほぐれたら、しょう油とみりん、お酒、さとうで煮ます。そのあと、ごはんとのりで、のり巻きにします。<BR>
+        　私はあまりかんぴょう巻きを食べませんでしたが、今回おばあちゃんとお母さんといっしょに作って、かんぴょう巻きがすごくおいしく感じました。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ←　２ミリの厚さでむいていきます。どんどんむいていくと……<BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">すし屋で食べるかんぴょう巻きの中身もこうしてできるのだ<BR>
+ということを初めて知った人もいることだろう。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="saiho"></A><BR>
+<FONT color="#ff0000">１０</FONT>．「おさいほう」（小４　西田　美花）<BR>
+<BR>
+みかちゃんは「作文のこころ」で、いくつも楽しい<BR>
+作文を書いている。<A href="newpage118.html">こちら</A>へ</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　春休みに、お母さんとおさいほうをしました。自分で物を作ると楽しいし、自分で物を作れるようになったらいいなと、いつも思っていました。<BR>
+        　最初は、はりが手にチクッとささってすごくいたかったけれど、ぬっていくうちにはりが手にささらなくなってきました。お母さんに玉どめと、波ぬいを教えてもらいました。玉どめは指に糸をクルクルッとまいて、ぐっと引っぱれば、糸に玉ができて、ぬい始めることができます。波ぬいは、お母さんがぬのに線を引いてくれました。その上を波のようにはりを動かしてぬっていきます。それを何回も続けたので、だんだん速く、きれいにぬえるようになりました。<BR>
+        もっと上手になったら、ペンケースを作ってみたいです。ペンケースがぬえるようになったら、ポシェットもぬってみたいです。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">上達が早いね。<BR>
+ペンケースもポシェットも、もう作れるだろう。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A><BR>
+</P>
+<HR>
+<P align="center"><A name="club"></A><BR>
+<FONT color="#ff0000">１１</FONT>．<FONT color="#0000ff">「クラブ活動見学」</FONT>（小３　オコナ－令於）<BR>
+<BR>
+男の子にしては珍しいかもしれない話を紹介しよう。<BR>
+令於（レオ）くんは<A href="newpage118.html">「作文のこころ」</A>（その３）にも登場して<BR>
+いくつも楽しい作文を書いている。</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　２月１３日火曜日、学校で４年生から入るクラブ活動の見学がありました。アウトドアスポーツ、インドアスポーツ、ごらくクラブ、家庭科クラブを見学しました。<BR>
+        　見学から帰る時、ぼくが「家庭科クラブもいいなあ」と言ったら、たけるくんが「おれも家庭科クラブに入る。いっしょに入ろう」と言ったので、２人で家庭科クラブに入ることにしました。すると、れんくんが「おれも家庭科クラブに入る」と言ったので、３人で入ることにしました。<BR>
+        　今まであまり男子のいなかった家庭科クラブに、久しぶりに男子が入ることになりました。ぼくが家庭科クラブに入ることにしたのは、料理が好きだからです。家庭科は料理だけではないけれど、入ったら、料理をするのが楽しみです。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">さあ、どんな料理ができるのだろう。目玉焼かな？<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="kyushoku"></A><BR>
+<FONT color="#ff0000">◯</FONT>　<FONT color="#0000ff">「給食」</FONT>特集<BR>
+<BR>
+最近の学校では、給食にいろいろな工夫が凝らされている。<BR>
+そもそもは、詩乃ちゃんが「おたのしみ給食」を書いたことだった。<BR>
+こちらの<A href="newpage122.html">「詩乃ちゃん」</A>のページへ。<BR>
+<BR>
+そこで、ほかの生徒にも聞いてみると、<BR>
+年に1回か、学期に1回、特別な料理が出るようであった。<BR>
+順に紹介しよう。<BR>
+<BR>
+<A name="viking"></A><BR>
+<FONT color="#ff0000">１２</FONT>．「バイキング給食」（小４　藤原　桃花）</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　6月20日にバイキング給食がありました。これは、それぞれのはんの人数分、いろいろな料理があって、その料理を好きなだけ取って食べます。年に一度しかありません。<BR>
+        　場所は家庭科室で、とってもきれいにセッティングされていました。サラダ、ピザ、パスタ、チャーハン、ローストビーフなどの、おいしそうな料理がたくさんならんでいて、男子の目が光っていました。<BR>
+        　はんは、行く前に、くじで決めました。わたしたちのはんにはたんにんの先生が入って、7人になりました。食べ始めると、先生が大食いだったので、サラダがすぐになくなってしまいました。わたしはおもにチャーハンとパスタを食べました。ほかの料理もだんだんなくなってきて、デザートはジャンケンで決めました。デザートはサクランボとフルーツゼリーで、２つあまりました。2人が「もうおなかいっぱい」と言ったので、先生もジャンケンに参加して、7人でジャンケンしました。勝ったのは先生と男子です。先生が勝って、みんなに「大人げない」と言われましたが、ぜりーをおいしそうにパクパク食べていました。<BR>
+        　来年はなべ給食なので、楽しみです。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+        <BR>
+        ←　……好きなだけ取って食べられる給食です。</TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">「男子の目が光っている」ところとか、先生が本気を出している様子に<BR>
+臨場感があるね。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="request"></A><BR>
+<FONT color="#ff0000">13</FONT>．「リクエスト給食」（小５　橋本　悠雄）<BR>
+<BR>
+給食のおばさんたちは、どの学校でも<BR>
+工夫を凝らしている。</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　僕の学校では、３月に「リクエスト給食」というのがあります。いちばん好きな料理を紙に書いて出すと、いちばん希望の多かった料理が、１週間後に出てきます。どんな料理が出てくるか、みんな楽しみにしています。<BR>
+        　ぼくはカツカレーライスをリクエストしました。イチゴパフェやコーヒー牛乳、エクレアパン、アイスクリーム、そのほか、ハーゲンダッツやジョアをリクエストした人もいました。その中で選ばれたのがカツカレーです。給食ではイチゴパフェとアイスクリームも出てきました。みんな「やったぁ！」と言いました。<BR>
+        　リクエスト給食では、その日にならないと何が出てくるか分からないので、そこが楽しみです。今年は僕が希望した料理が出てきたので、最高でした。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">歓声をあげている姿が目に浮かぶ。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="select"></A><BR>
+<FONT color="#ff0000">１４</FONT>．<FONT color="#0000ff">「セレクト給食」</FONT>（小４　藤原桃花）<BR>
+<BR>
+桃花ちゃんの学校では、給食でいろいろもてなしてくれるようだ。</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　７月６日、セレクト給食がありました。この給食はバイキング給食と同じで、年に一度だけあります。５週間ぐらい前にプリントが配られ、そこに書いてあるメニューの２つのうちの１つを選ぶと、５週間後の給食にそれが出てきます。<BR>
+        　わたしが選んだのは、とり肉の料理とオレンジジュースです。とり肉はたつたあげです。もう１つのメニューは、ちくわのいそべあげとコーヒー牛乳でしたが、わたしはたつたあげが好きなので、とり肉のメニューにしました。<BR>
+        　給食では自分の選んだ料理が出てくるので、みんなこうふんしていました。たつたあげをきぼうしたのはほとんどの人で、いそべあげは５人くらいでした。「いただきます」と同時に、男子も女子もいっせいに食べ始めて、中には３分で食べ終わった男子もいました。わたしは、たつたあげのかりかりしたところが好きで、２こをあっという間に食べてしまいました。<BR>
+        　次のセレクト給食も楽しみです。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">選べるところがいいのだよね。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><A name="nabe"></A><BR>
+<FONT color="#ff0000">１５</FONT>．<FONT color="#0000ff">「鍋給食」</FONT>（小６　緑川　彩奈）</P>
+<P align="center">こんなユニークな給食もある。</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap>　私の学校では毎年１回「お楽しみ給食」があり、５年生だけは２月に「鍋給食」という特別な給食があります。鍋料理にはいろいろな種類があるそうですが、私たちは「ちゃんこ鍋」を食べました。ちゃんこ鍋はおすもうさんが食べる料理です。<BR>
+        　その給食の前に一度、事前授業がありました。日本で鍋料理が食べられるようになったのは縄文時代ということや、日本で最初に流行したのは「牛鍋（すきやき）」だということを学びました。また、地方によって、いろいろな鍋があるということなど、鍋料理に関することをたくさん習いました。<BR>
+        <BR>
+        　鍋給食は家庭科室でありました。班ごとに鍋を囲みます。私の班は男子３人、女子３人でした。鍋に入っていた食材は、鱈の切り身、鶏肉のつくね、とうふ、油あげのほが、きのこ類や野菜などで、もうぐつぐつと煮えていました。それをそれぞれ、ボウルにとって食べます。私はひととおり取って食べました。一番おいしかったのは鱈の切り身です。鍋の食材が少なくなると、ごはん、たまご、小ねぎを加え、雑炊にして食べました。最初の鍋の時と雑炊の時では、全く違った味がしました。<BR>
+        <BR>
+        　鍋給食では、みんなで分け合うとおいしいことや、食材やつゆを変えるといろいろな味になることなど、鍋にはたくさんのよいことがあるということを知りました。ふだん家で食べる鍋料理とは違う食材が入っていたので、違った食感や味、かおりを楽しむことができました。おすもうさんは毎日ちゃんこ鍋を食べているそうですが、あきないのはきっと毎日食材を変えているからだと思います。</TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"><BR>
+        ※　鍋…なべ<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ※　鱈…たら、鶏…にわとり（鶏肉…けいにく）、<BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        ※　雑炊…ぞうすい</TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<P align="center">話が歴史や風土に、また、お相撲さんの世界にまで<BR>
+広がっているので、物知りになるね。<BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A></P>
+<HR>
+<P align="center"><BR>
+１６．「　　」<BR>
+<BR>
+<U><FONT size="+2">準備中</FONT></U></P>
+<P align="center"><BR>
+<IMG src="a_ilst032.gif" width="90" height="90" border="0"></P>
+<P align="center"><BR>
+ご意見・ご希望・ご質問は<A href="mailto:sakubun@dohjoh.com">こちら</A>へ</P>
+<HR>
+<P align="center"><IMG src="food006.gif" width="120" height="80" border="0">　　<IMG src="sch003.gif" width="85" height="85" border="0">　　<IMG src="other050.gif" width="83" height="90" border="0">　　　<IMG src="food008.gif" width="100" height="67" border="0">　<IMG src="sch002.gif" width="85" height="85" border="0"><BR>
+<BR>
+<A href="#upper"><FONT size="+1">もどる</FONT></A><BR>
+</P>
+<DIV align="center">
+  <TABLE border="1" width="600" cellpadding="12">
+    <TBODY>
+      <TR>
+        <TD valign="middle" align="center" bgcolor="#00ffff" width="350">はじめの作文</TD>
+        <TD align="center" bgcolor="#ff99ff" width="285">添削例・諸注意</TD>
+      </TR>
+      <TR>
+        <TD valign="top" align="left" width="315" bgcolor="#ffffff" nowrap></TD>
+        <TD valign="top" align="left" width="285" bgcolor="#c1ffbf"></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+</BODY>
+</HTML>

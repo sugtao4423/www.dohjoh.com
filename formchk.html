@@ -1,0 +1,57 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<!----------------------------------------------------------------------------
+このページに画像ファイルを表示させたり、他のページへのリンクを作成する場合は
+画像ファイルやリンク先のアドレスを絶対パス（URLまたはURI）で指定して下さい。
+例えば /home/images ディレクトリ abc.gif という画像ファイルを置き、
+このHTMLファイルで表示させる場合は以下の様に<IMG>タグを記述して下さい。
+
+  <IMG SRC="/images/abc.gif">
+
+以下の様にファイル名だけを記述すると画像が正しく表示されなくなったり、
+リンクが機能しなくなりますのでご注意下さい。
+
+  <IMG SRC="abc.gif">
+----------------------------------------------------------------------------->
+
+  <HEAD>
+    <TITLE>入力内容の確認</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#330033" LINK="#FFFFFF" VLINK="#FFFFFF" text="#FFFFFF">
+    <FONT COLOR="#FFCC55"><B>入力内容の確認</B></FONT>
+    <BR>
+    <FONT SIZE="-1">
+      以下の内容がメールで送信されます。入力した内容に間違いがないかをご確認の上、「送信」ボタンをクリックして下さい。
+      <BR>
+      内容が間違っていた場合はブラウザの[戻る]ボタンをクリックして入力画面に戻り入力をやり直して下さい。
+    </FONT>
+    <HR><BR>
+
+<!----------------------------------------------------------------------------
+ここから下の部分に書かれている内容は削除しないで下さい。
+必要なタグを削除したり書き換えてしまうと、正常に動作しなくなる場合があります。
+----------------------------------------------------------------------------->
+
+    <UL>
+      <TABLE WIDTH="80%">
+        <TR><TD WIDTH="20%"><B>項目名</B></TD><TD><B>入力内容</B></TD></TR> 
+        <!-- RoopFormat Start -->
+        <TR><TD>%s</TD><TD>%s</TD></TR> 
+        <!-- RoopFormat End -->
+      </TABLE>
+    </UL>
+
+    <FORM ACTION="/cgi-bin/formmail.cgi" METHOD="POST">
+      <INPUT TYPE="submit" VALUE="送信">
+      <INPUT TYPE="hidden" NAME="FORMMAIL_MODE" VALUE="CONFORM_OK">
+      <!-- RoopFormat Start -->
+      <INPUT TYPE="hidden" NAME="%s" VALUE="%s">
+      <!-- RoopFormat End -->
+    </FORM>
+
+  </BODY>
+
+</HTML>
