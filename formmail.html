@@ -3,57 +3,57 @@
 <HTML>
 
   <HEAD>
-    <TITLE>WebARENA Suite �t�H�[�����[�� Version 2.2</TITLE>
+    <TITLE>WebARENA Suite フォームメール Version 2.2</TITLE>
   </HEAD>
 
   <BODY BGCOLOR="#330033" LINK="#FFFFFF" VLINK="#FFFFFF" text="#FFFFFF">
-    <FONT COLOR="#FFCC55"><B>WebARENA Suite �t�H�[�����[�� Version 2.2</B></FONT>
+    <FONT COLOR="#FFCC55"><B>WebARENA Suite フォームメール Version 2.2</B></FONT>
     <BR>
     <FONT SIZE="-1">
-      �t�H�[���ɑ��M������e����͂��āA���[�������M����鎖���m�F���ĉ������B
+      フォームに送信する内容を入力して、メールが送信される事を確認して下さい。
       <BR>
-      Version 2�ł͓��͓��e�m�F��ʂ̕\���E�K�{���͍��ڂ⃁�[���A�h���X���͍��ڂ̐ݒ�Ȃǂ��o����l�ɂȂ�܂����B
+      Version 2では入力内容確認画面の表示・必須入力項目やメールアドレス入力項目の設定などが出来る様になりました。
     </FONT>
     <HR><BR>
 
     <FORM METHOD="POST" ACTION="/cgi-bin/formmail.cgi">
 
-      <B>�����O</B>
+      <B>お名前</B>
       <BR>
       <FONT SIZE="-1">
-        �����̍��ڂ�<FONT COLOR="#FFCC55">�K�{���͍���</FONT>�ɐݒ肳��Ă��܂��B
-        �������͂���Ă��Ȃ��ꍇ�̓G���[�ɂȂ�܂��B
+        ※この項目は<FONT COLOR="#FFCC55">必須入力項目</FONT>に設定されています。
+        何も入力されていない場合はエラーになります。
       </FONT>
       <BR>
       <INPUT TYPE="text" NAME="a" SIZE="20">
-      <INPUT TYPE="hidden" NAME="OPT:NEED:a" VALUE="�����O">
+      <INPUT TYPE="hidden" NAME="OPT:NEED:a" VALUE="お名前">
       <BR><BR>
 
-      <B>���[���A�h���X</B>
+      <B>メールアドレス</B>
       <BR>
       <FONT SIZE="-1">
-        �����̍��ڂ�<FONT COLOR="#FFCC55">���[���A�h���X���͍���</FONT>�ɐݒ肳��Ă��܂��B
-        ���[���A�h���X�Ƃ��Đ��������e�����͂���Ă��Ȃ��ꍇ�̓G���[�ɂȂ�܂��B
+        ※この項目は<FONT COLOR="#FFCC55">メールアドレス入力項目</FONT>に設定されています。
+        メールアドレスとして正しい内容が入力されていない場合はエラーになります。
       </FONT>
       <BR>
       <INPUT TYPE="text" NAME="b" SIZE="30">
-      <INPUT TYPE="hidden" NAME="OPT:MAILADDRESS:b" VALUE="���[���A�h���X">
+      <INPUT TYPE="hidden" NAME="OPT:MAILADDRESS:b" VALUE="メールアドレス">
       <BR><BR>
 
-      <B>����</B>
+      <B>性別</B>
       <BR>
-      <INPUT TYPE="radio" NAME="c" VALUE="�j" CHECKED>�j
-      <INPUT TYPE="radio" NAME="c" VALUE="��">��
-      <INPUT TYPE="hidden" NAME="OPT:JPNAME:c" VALUE="����">
+      <INPUT TYPE="radio" NAME="c" VALUE="男" CHECKED>男
+      <INPUT TYPE="radio" NAME="c" VALUE="女">女
+      <INPUT TYPE="hidden" NAME="OPT:JPNAME:c" VALUE="性別">
       <BR><BR>
 
-      <B>�R�����g</B>
+      <B>コメント</B>
       <BR>
       <TEXTAREA NAME="d" COLS="30" ROWS="3"></TEXTAREA>
-      <INPUT TYPE="hidden" NAME="OPT:JPNAME:d" VALUE="�R�����g">
+      <INPUT TYPE="hidden" NAME="OPT:JPNAME:d" VALUE="コメント">
       <BR><BR>
 
-      <INPUT TYPE="submit" VALUE="���M"> <INPUT TYPE="reset" VALUE="���">
+      <INPUT TYPE="submit" VALUE="送信"> <INPUT TYPE="reset" VALUE="取消">
 
     </FORM>
 
