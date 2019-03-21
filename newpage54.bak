@@ -313,7 +313,7 @@ scroll_status();
 （「俳句いろはかるた」は追って復刊の予定です。予約をお受けします）。<BR>
 </P>
 <DIV align="center">
-<FORM method="POST" action="http://dohjoh.com/cgi-bin/formmail.cgi">
+<FORM method="POST" action="#">
 <CENTER>
 <TABLE width="486" cellpadding="3" border="1">
   <CAPTION><U><FONT size="+1"> 注 文 書</FONT></U></CAPTION>

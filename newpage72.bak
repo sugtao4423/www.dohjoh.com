@@ -1533,7 +1533,7 @@
 <BR>
 <H3 align="center"><A name="mohshikomisho"><B><U>申 込 書</U></B></A><B><A name="kaiin"><U>（会員制）</U></A></B></H3>
 ※「回数制」の場合は<A href="#kaisu">こちら</A>へ
-<FORM method="POST" action="http://dohjoh.com/cgi-bin/formmail.cgi">
+<FORM method="POST" action="#">
 <CENTER>
 <TABLE>
   <TBODY>
@@ -1654,7 +1654,7 @@
 <A name="mohshikomi-2"><B><U>申　込　書</U></B></A><U>　（回数制）</U></H3>
 <P align="center">※「会員制｝の場合は<A href="#kaiin">こちら</A>へ。<BR>
 </P>
-<FORM method="POST" action="http://dohjoh.com/cgi-bin/formmail.cgi">
+<FORM method="POST" action="#">
 <CENTER>
 <TABLE>
   <TBODY>
